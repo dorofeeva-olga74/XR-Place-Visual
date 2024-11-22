@@ -6,7 +6,7 @@ function App() {
     <>
       <p className={styles.title}>
         XR Place <br />
-        Команда №2
+        победитель - Команда №2
       </p>
     </>
   )
