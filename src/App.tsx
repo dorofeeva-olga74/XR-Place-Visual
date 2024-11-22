@@ -1,10 +1,12 @@
-function App() {
+import styles from './App.module.scss'
 
+function App() {
 
   return (
     <>
-      <p>
-        XR Place
+      <p className={styles.title}>
+        XR Place <br />
+        Команда №2
       </p>
     </>
   )
