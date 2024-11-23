@@ -14,7 +14,10 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,html,css}": ["npm run prettier", "npm run lint:fix"]
+    "*.{js,jsx,ts,tsx,md,html,css}": [
+      "npm run prettier",
+      "npm run lint:fix"
+    ]
   },
   "dependencies": {
     "react": "^18.3.1",
