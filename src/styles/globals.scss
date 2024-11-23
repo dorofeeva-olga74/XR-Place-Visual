@@ -1,0 +1,110 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
+// Переменные всех цветов
+$Black_BG: #080808;
+$Dark_grey_Border: #212121;
+$Disabled_grey_txt: #4a4a4a;
+$Disabled_grey_BG: #717171;
+$Grey_Border: #a5a7a7;
+$Light_Grey_Border: #f5f5f5;
+$White_BG: #fafafa;
+$White_txt: #f7f7f7;
+$Main_Blue: #00b1b8;
+$Hover_Blue: #008085;
+
+//Текст для Desktop
+@mixin Text_Text_M {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+}
+
+@mixin Text_Label {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+@mixin Desktop_H1 {
+  font-size: 120px;
+  font-weight: 400;
+  line-height: 120px;
+}
+
+@mixin Desktop_XL {
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 44.8px;
+}
+
+@mixin Text_H2 {
+  font-size: 80px;
+  font-weight: 300;
+  line-height: 96px;
+}
+
+@mixin Text_Subheader_S {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+@mixin Text_Subheader_M {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 47.6px;
+}
+
+@mixin Text_Big_Comment {
+  font-size: 110px;
+  font-weight: 400;
+  line-height: 121px;
+}
+
+@mixin Text_Subheader_L {
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 56px;
+}
+
+@mixin Text_Text_XS {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+//Текст для Tablet/Mobile
+
+@mixin Mobile_H1 {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+@mixin Mobile_H2 {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 33.6px;
+}
+
+@mixin Mobile_M {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22.4px;
+}
+
+@mixin Mobile_XL {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 33.6px;
+}
