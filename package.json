@@ -22,7 +22,7 @@
       "npm run lint:fix",
       "prettier --write"
     ],
-    "!(*.scss|*.js|*.jsx|*.ts|*.tsx)": [
+    "!(**/*.scss|*.js|*.jsx|*.ts|*.tsx)": [
       "prettier --write"
     ]
   },
