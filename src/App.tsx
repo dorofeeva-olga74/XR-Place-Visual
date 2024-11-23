@@ -1,6 +1,7 @@
 import styles from './App.module.scss';
 
 function App() {
+  console.log('sd');
   return (
     <>
       <p className={styles.title}>
