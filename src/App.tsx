@@ -1,7 +1,6 @@
-import styles from './App.module.scss'
+import styles from './App.module.scss';
 
 function App() {
-
   return (
     <>
       <p className={styles.title}>
@@ -9,7 +8,7 @@ function App() {
         победитель - Команда №2
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
