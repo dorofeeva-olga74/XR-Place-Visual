@@ -20,10 +20,10 @@
     ],
     "*.{js,jsx,ts,tsx}": [
       "npm run lint:fix",
-      "prettier --write"
+      "npm run prettier"
     ],
     "!(*.scss|*.js|*.jsx|*.ts|*.tsx)": [
-      "prettier --write"
+      "npm run prettier"
     ]
   },
   "dependencies": {
