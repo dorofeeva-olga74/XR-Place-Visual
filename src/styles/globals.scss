@@ -7,104 +7,103 @@
 }
 
 body {
-  font-family: 'Manrope', sans-serif;
+  font-family: Manrope, sans-serif;
 }
 
 // Переменные всех цветов
-$Black_BG: #080808;
-$Dark_grey_Border: #212121;
-$Disabled_grey_txt: #4a4a4a;
-$Disabled_grey_BG: #717171;
-$Grey_Border: #a5a7a7;
-$Light_Grey_Border: #f5f5f5;
-$White_BG: #fafafa;
-$White_txt: #f7f7f7;
-$Main_Blue: #00b1b8;
-$Hover_Blue: #008085;
+$black-bg: #080808;
+$dark-grey-border: #212121;
+$disabled-grey-txt: #4a4a4a;
+$disabled-grey-bg: #717171;
+$grey-border: #a5a7a7;
+$light-grey-border: #f5f5f5;
+$white-bg: #fafafa;
+$white-txt: #f7f7f7;
+$main-blue: #00b1b8;
+$hover-blue: #008085;
 
-//Текст для Desktop
-@mixin Text_Text_M {
+// Текст для Desktop
+@mixin text-text-m {
   font-size: 20px;
   font-weight: 300;
-  line-height: 28px;
+  line-height: 1.4;
 }
 
-@mixin Text_Label {
+@mixin text-label {
   font-size: 20px;
   font-weight: 400;
-  line-height: 28px;
+  line-height: 1.4;
 }
 
-@mixin Desktop_H1 {
+@mixin desktop-h1 {
   font-size: 120px;
   font-weight: 400;
-  line-height: 120px;
+  line-height: 1;
 }
 
-@mixin Desktop_XL {
+@mixin desktop-xl {
   font-size: 32px;
   font-weight: 300;
-  line-height: 44.8px;
+  line-height: 1.4;
 }
 
-@mixin Text_H2 {
+@mixin text-h2 {
   font-size: 80px;
   font-weight: 300;
-  line-height: 96px;
+  line-height: 1.2;
 }
 
-@mixin Text_Subheader_S {
+@mixin text-subheader-s {
   font-size: 24px;
   font-weight: 400;
-  line-height: 40px;
+  line-height: 1.6;
 }
 
-@mixin Text_Subheader_M {
+@mixin text-subheader-m {
   font-size: 34px;
   font-weight: 400;
-  line-height: 47.6px;
+  line-height: 1.4;
 }
 
-@mixin Text_Big_Comment {
+@mixin text-big-comment {
   font-size: 110px;
   font-weight: 400;
-  line-height: 121px;
+  line-height: 1.1;
 }
 
-@mixin Text_Subheader_L {
+@mixin text-subheader-l {
   font-size: 40px;
   font-weight: 300;
-  line-height: 56px;
+  line-height: 1.4;
 }
 
-@mixin Text_Text_XS {
+@mixin text-text-xs {
   font-size: 12px;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 1.5;
 }
 
-//Текст для Tablet/Mobile
-
-@mixin Mobile_H1 {
+// Текст для Tablet/Mobile
+@mixin mobile-h1 {
   font-size: 40px;
   font-weight: 400;
-  line-height: 40px;
+  line-height: 1;
 }
 
-@mixin Mobile_H2 {
+@mixin mobile-h2 {
   font-size: 28px;
   font-weight: 300;
-  line-height: 33.6px;
+  line-height: 1.2;
 }
 
-@mixin Mobile_M {
+@mixin mobile-m {
   font-size: 16px;
   font-weight: 300;
-  line-height: 22.4px;
+  line-height: 1.4;
 }
 
-@mixin Mobile_XL {
+@mixin mobile-xl {
   font-size: 24px;
   font-weight: 300;
-  line-height: 33.6px;
+  line-height: 1.4;
 }
