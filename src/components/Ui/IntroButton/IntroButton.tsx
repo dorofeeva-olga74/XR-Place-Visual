@@ -5,9 +5,9 @@ interface IntroButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
-const IntroButton: React.FC<IntroButtonProps> = ({ children, ...props }) => {
+const IntroButton: React.FC<IntroButtonProps> = ({ children, type = 'button', ...props }) => {
   return (
-    <button className={styles.button} {...props} type="button">
+    <button className={styles.button} type={type} {...props}>
       {children}
     </button>
   );
