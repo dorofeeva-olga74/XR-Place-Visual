@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import styles from './IntroButton.module.scss';
 
-interface IntroButtonProps {
-  label: string;
-  disabled?: boolean;
-  onClick?: () => void;
+interface IntroButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
 }
 
-const IntroButton: React.FC<IntroButtonProps> = ({ label, disabled, onClick }) => {
+const IntroButton: React.FC<IntroButtonProps> = ({ children, ...props }) => {
   return (
-    <button className={styles.button} type="button" disabled={disabled} onClick={onClick}>
-      {label}
+    <button className={styles.button} {...props} type="button">
+      {children}
     </button>
   );
 };
