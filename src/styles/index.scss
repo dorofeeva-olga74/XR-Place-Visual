@@ -1,2 +1,2 @@
-@import url('../vendor/normalize.css');
-@import url('./globals.scss');
+@use '/src/vendor/normalize.css';
+@use '/src/styles/globals';
