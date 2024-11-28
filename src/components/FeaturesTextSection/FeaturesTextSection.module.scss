@@ -1,0 +1,60 @@
+.shimmer-text-set {
+  display: flex;
+  position: relative;
+  padding: 0;
+  margin: 0 auto;
+  width: calc(100% - 34px * 2);
+  border: 2px solid;
+  border-image-source: linear-gradient(90deg, #080808 -2.44%, #878787 50%, #080808 102.44%);
+
+  @media (width <= 550px) {
+    width: calc(100% - 20px * 2);
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -100%;
+    }
+
+    100% {
+      background-position: 200%;
+    }
+  }
+
+  .shimmer-text {
+    font-family: Manrope, sans-serif;
+    margin-left: 25%;
+    padding: 76px 0 92px 12%;
+    height: auto;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 44.8px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    background: linear-gradient(90deg, #f7f7f7, #99e8f4, #f7f7f7);
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    background-clip: text;
+    animation: shimmer 2s linear infinite;
+
+    @media (width <= 768px) {
+      font-size: 24px;
+      line-height: 33.6px;
+      margin-left: 0;
+      padding: 38px 8.57% 48px;
+    }
+
+    @media (width <= 320px) {
+      padding: 0;
+    }
+
+    .shimmer-span {
+      background: linear-gradient(90deg, #00b1b8, #af4261, #00b1b8);
+      background-size: 200% auto;
+      background-clip: text;
+      background-clip: text;
+      animation: shimmer 2s linear infinite;
+    }
+  }
+}
