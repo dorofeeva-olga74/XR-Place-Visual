@@ -1,0 +1,36 @@
+.widget-section {
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+
+  @media (width <= 768px) {
+    gap: 80px;
+  }
+
+  .widget-text-container {
+    display: flex;
+    flex-direction: row;
+
+    .widget-circle-container {
+      display: flex;
+      width: 25%;
+      top: 16px;
+      justify-content: flex-end;
+      margin: 16px 0 0;
+
+      @media (width <= 768px) {
+        width: 22px;
+      }
+
+      @media (width <= 320px) {
+        display: none;
+      }
+    }
+  }
+
+  .widget-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+}
