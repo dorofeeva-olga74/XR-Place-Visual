@@ -24,86 +24,114 @@ $hover-blue: #008085;
 
 // Текст для Desktop
 @mixin text-text-m {
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 1.4;
+  & {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.4;
+  }
 }
 
 @mixin text-label {
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1.4;
+  & {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
 }
 
 @mixin desktop-h1 {
-  font-size: 120px;
-  font-weight: 400;
-  line-height: 1;
+  & {
+    font-size: 120px;
+    font-weight: 400;
+    line-height: 1;
+  }
 }
 
 @mixin desktop-xl {
-  font-size: 32px;
-  font-weight: 300;
-  line-height: 1.4;
+  & {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.4;
+  }
 }
 
 @mixin text-h2 {
-  font-size: 80px;
-  font-weight: 300;
-  line-height: 1.2;
+  & {
+    font-size: 80px;
+    font-weight: 300;
+    line-height: 1.2;
+  }
 }
 
 @mixin text-subheader-s {
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.6;
+  & {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
 }
 
 @mixin text-subheader-m {
-  font-size: 34px;
-  font-weight: 400;
-  line-height: 1.4;
+  & {
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
 }
 
 @mixin text-big-comment {
-  font-size: 110px;
-  font-weight: 400;
-  line-height: 1.1;
+  & {
+    font-size: 110px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
 }
 
 @mixin text-subheader-l {
-  font-size: 40px;
-  font-weight: 300;
-  line-height: 1.4;
+  & {
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.4;
+  }
 }
 
 @mixin text-text-xs {
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.5;
+  & {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
 }
 
 // Текст для Tablet/Mobile
 @mixin mobile-h1 {
-  font-size: 40px;
-  font-weight: 400;
-  line-height: 1;
+  & {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1;
+  }
 }
 
 @mixin mobile-h2 {
-  font-size: 28px;
-  font-weight: 300;
-  line-height: 1.2;
+  & {
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1.2;
+  }
 }
 
 @mixin mobile-m {
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.4;
+  & {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4;
+  }
 }
 
 @mixin mobile-xl {
-  font-size: 24px;
-  font-weight: 300;
-  line-height: 1.4;
+  & {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.4;
+  }
 }

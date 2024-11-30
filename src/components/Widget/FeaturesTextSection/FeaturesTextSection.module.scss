@@ -1,3 +1,5 @@
+@use '../../../styles/globals' as globals;
+
 .shimmer-text-set {
   display: flex;
   position: relative;
@@ -5,7 +7,7 @@
   margin: 0 auto;
   width: 100%;
   border: 2px solid;
-  border-image-source: linear-gradient(90deg, #080808 -2.44%, #878787 50%, #080808 102.44%);
+  border-image-source: linear-gradient(90deg, globals.$black-bg -2.44%, globals.$grey-border 50%, globals.$black-bg 102.44%);
 
   @keyframes shimmer {
     0% {
@@ -18,25 +20,21 @@
   }
 
   .shimmer-text {
-    font-family: Manrope, sans-serif;
     padding: 76px 0 92px 12%;
     height: auto;
-    font-size: 32px;
-    font-weight: 300;
-    line-height: 44.8px;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    background: linear-gradient(90deg, #f7f7f7, #99e8f4, #f7f7f7);
+    background: linear-gradient(90deg, globals.$white-txt, globals.$main-blue, globals.$white-txt);
     background-size: 200% auto;
     color: transparent;
     background-clip: text;
     animation: shimmer 2s linear infinite;
 
+    @include globals.desktop-xl;
+
     @media (width <= 768px) {
-      font-size: 24px;
-      line-height: 33.6px;
       margin-left: 0;
       padding: 33px 0 0;
+
+      @include globals.mobile-xl;
     }
 
     @media (width <= 320px) {
@@ -44,7 +42,7 @@
     }
 
     .shimmer-span {
-      background: linear-gradient(90deg, #00b1b8, #af4261, #00b1b8);
+      background: linear-gradient(90deg, globals.$main-blue, #af4261, globals.$main-blue);
       background-size: 200% auto;
       background-clip: text;
       animation: shimmer 2s linear infinite;

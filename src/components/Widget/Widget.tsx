@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from './WidgetSection.module.scss';
+import styles from './Widget.module.scss';
 import GlowingCircle from '../Ui/GlowingCircle/GlowingCircle';
-import FeaturesTextSection from '../FeaturesTextSection/FeaturesTextSection';
-import FeaturesWidgetSection from '../FeaturesWidgetSection/FeaturesWidgetSection';
+import FeaturesTextSection from './FeaturesTextSection/FeaturesTextSection';
+import FeaturesWidgetSection from './FeaturesWidgetSection/FeaturesWidgetSection';
 
-const WidgetSection: React.FC = () => {
+const Widget: React.FC = () => {
   return (
-    <section className={styles['widget-section']}>
+    <section className={styles['widget']}>
       <div className={styles['widget-text-container']}>
         <div className={styles['widget-circle-container']}>
           <GlowingCircle />
@@ -19,4 +19,4 @@ const WidgetSection: React.FC = () => {
     </section>
   );
 };
-export default WidgetSection;
+export default Widget;

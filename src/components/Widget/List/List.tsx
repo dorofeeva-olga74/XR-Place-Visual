@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import styles from './List.module.scss';
 
 const ListItem: React.FC<{ text: string }> = ({ text }) => {
@@ -6,7 +7,8 @@ const ListItem: React.FC<{ text: string }> = ({ text }) => {
 };
 
 const List: React.FC = () => {
-  const data = ['Виджет легко встраивается в любой сайт', 'Доступно с любого устройства', 'Интерактивное вовлечение покупателей', 'Точный вид из окна для каждой планировки', 'Свобода перемещения как в компьютерной игре'];
+  const { t } = useTranslation();
+  const data: string[] = t('components.widget.list.items', { returnObjects: true }) as unknown as string[];
   return (
     <ul className={styles['list']}>
       {data.map((item, index) => {

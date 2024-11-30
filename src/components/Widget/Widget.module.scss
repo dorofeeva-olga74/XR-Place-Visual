@@ -1,10 +1,12 @@
-.widget-section {
+.widget {
   display: flex;
   flex-direction: column;
   gap: 160px;
+  padding: 160px 0;
 
   @media (width <= 768px) {
     gap: 80px;
+    padding: 80px 0;
   }
 
   .widget-text-container {

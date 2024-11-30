@@ -1,20 +1,20 @@
+@use '../../../styles/globals' as globals;
+
 .features-widget-set {
   width: 100%;
   display: flex;
   flex-direction: column;
 
   .features-widget-title {
-    font-family: Manrope, sans-serif;
-    font-size: 80px;
-    font-weight: 300;
-    line-height: 96px;
-    color: rgb(247 247 247 / 100%);
+    color: globals.$white-txt;
     margin: 0 0 5rem;
+
+    @include globals.text-h2;
 
     @media (width <= 768px) {
       margin: 0 0 2.5rem;
-      font-size: 28px;
-      line-height: 33.6px;
+
+      @include globals.mobile-h2;
     }
   }
 
@@ -34,7 +34,7 @@
 
       @media (width <= 768px) {
         width: 100%;
-        margin: 1.25rem 0 5rem;
+        margin: 1.25rem 0 0;
       }
     }
 
