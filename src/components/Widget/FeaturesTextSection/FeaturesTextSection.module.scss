@@ -8,6 +8,7 @@
   width: 100%;
   border: 2px solid;
   border-image-source: linear-gradient(90deg, globals.$black-bg -2.44%, globals.$grey-border 50%, globals.$black-bg 102.44%);
+  z-index: 5;
 
   @keyframes shimmer {
     0% {
@@ -27,6 +28,7 @@
     color: transparent;
     background-clip: text;
     animation: shimmer 2s linear infinite;
+    z-index: 2;
 
     @include globals.desktop-xl;
 

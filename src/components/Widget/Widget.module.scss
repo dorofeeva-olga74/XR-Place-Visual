@@ -1,8 +1,58 @@
+@use '../../styles/globals.scss' as globals;
+
 .widget {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 160px;
-  padding: 160px 0;
+  padding: 118px 0;
+
+  .grid-background {
+    position: absolute;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 42px 320px 38px;
+    grid-auto-rows: 1fr;
+    z-index: 2;
+
+    @media (width <= 320px) {
+      display: none;
+    }
+
+    .grid-item {
+      width: 100%;
+      position: relative;
+    }
+
+    .grid-item:nth-child(1),
+    .grid-item:nth-child(2),
+    .grid-item:nth-child(3) {
+      border-right: 2px solid globals.$dark-grey-border;
+    }
+
+    .grid-item:nth-child(5),
+    .grid-item:nth-child(8) {
+      border-top: 2px solid globals.$dark-grey-border;
+      border-bottom: 2px solid globals.$dark-grey-border;
+    }
+
+    .grid-item:nth-child(6) {
+      border: 2px solid globals.$dark-grey-border;
+    }
+
+    .grid-item:nth-child(7) {
+      border-top: 2px solid globals.$dark-grey-border;
+      border-right: 2px solid globals.$dark-grey-border;
+      border-bottom: 2px solid globals.$dark-grey-border;
+    }
+
+    .grid-item:nth-child(9),
+    .grid-item:nth-child(10),
+    .grid-item:nth-child(11) {
+      border-right: 2px solid globals.$dark-grey-border;
+    }
+  }
 
   @media (width <= 768px) {
     gap: 80px;
@@ -12,13 +62,12 @@
   .widget-text-container {
     display: flex;
     flex-direction: row;
+    z-index: 2;
+    margin: 42px 0 0 25%;
+    padding: 0;
 
     .widget-circle-container {
       display: flex;
-      width: 25%;
-      top: 16px;
-      justify-content: flex-end;
-      margin: 16px 0 0;
 
       @media (width <= 768px) {
         width: 22px;
@@ -27,6 +76,10 @@
       @media (width <= 320px) {
         display: none;
       }
+    }
+
+    @media (width <= 1024px) {
+      margin: 42px 0 0;
     }
   }
 
