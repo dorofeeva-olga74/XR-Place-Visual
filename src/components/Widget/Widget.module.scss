@@ -9,7 +9,8 @@
 
   .grid-background {
     position: absolute;
-    width: 100%;
+    margin-left: -34px;
+    width: calc(100% + 68px);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 42px 320px 38px;
