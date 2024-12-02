@@ -8,18 +8,11 @@ const Widget: React.FC = () => {
   return (
     <section className={styles['widget']}>
       <div className={styles['grid-background']}>
-        <div className={styles['grid-item']}></div>
-        <div className={styles['grid-item']}></div>
-        <div className={styles['grid-item']}></div>
-        <div className={styles['grid-item']}></div>
-        <div className={styles['grid-item']}></div>
-        <div className={styles['grid-item']}></div>
-        <div className={styles['grid-item']}></div>
-        <div className={styles['grid-item']}></div>
-        <div className={styles['grid-item']}></div>
-        <div className={styles['grid-item']}></div>
-        <div className={styles['grid-item']}></div>
-        <div className={styles['grid-item']}></div>
+        {Array(12)
+          .fill('1')
+          .map((item, index) => (
+            <div key={`${item} - ${index}`} className={styles['grid-item']} />
+          ))}
       </div>
       <div className={styles['widget-text-container']}>
         <div className={styles['widget-circle-container']}>
