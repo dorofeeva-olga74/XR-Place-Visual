@@ -1,0 +1,40 @@
+@use '../../../styles/globals' as globals;
+
+.shimmer-text-set {
+  display: flex;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  z-index: 5;
+
+  .shimmer-text {
+    padding: 76px 0 92px 12%;
+    height: auto;
+    background-size: 200% auto;
+    color: globals.$white-txt;
+    background-clip: text;
+    z-index: 2;
+
+    @include globals.desktop-xl;
+
+    @media (width <= 768px) {
+      width: 100%;
+      margin-left: 0;
+      padding: 39px 0 60px 12%;
+
+      @include globals.mobile-xl;
+    }
+
+    @media (width <= 360px) {
+      padding: 0;
+    }
+
+    .shimmer-span {
+      color: globals.$main-blue;
+      background-size: 200% auto;
+      background-clip: text;
+      animation: shimmer 2s linear infinite;
+    }
+  }
+}

@@ -1,14 +1,11 @@
-import styles from './App.module.scss';
 import Layout from './components/Layout/Layout';
+import Widget from './components/Widget/Widget';
 
 function App() {
   return (
     <>
       <Layout>
-        <p className={styles.title}>
-          XR Place <br />
-          победитель - Команда №2
-        </p>
+        <Widget />
       </Layout>
     </>
   );
