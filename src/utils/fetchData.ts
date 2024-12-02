@@ -6,7 +6,7 @@ interface FetchOptions extends RequestInit {
 }
 
 export const fetchData = async (lang: 'RU' | 'EN', endpoint: string, { data, ...customOptions }: FetchOptions | Record<string, never> = {}) => {
-  const API_URL = lang === 'RU' ? API_URL_RU : API_URL_EN;
+  const API_URL = lang === 'EN' ? API_URL_EN : API_URL_RU;
   const headers: RequestInit['headers'] = {};
   if (data) {
     headers['Content-Type'] = 'application/json;charset=utf-8';
