@@ -18,6 +18,9 @@ i18n
             header: {
               advantages: 'Преимущества',
             },
+            team: {
+              title: 'КТО МЫ?',
+            },
             footer: {
               allRightsReserved: 'Все права защищены',
             },
@@ -29,6 +32,9 @@ i18n
           components: {
             header: {
               advantages: 'Advantages',
+            },
+            team: {
+              title: 'WHO ARE WE?',
             },
             footer: {
               allRightsReserved: 'All rights reserved',

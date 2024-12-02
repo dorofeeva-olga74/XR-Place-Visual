@@ -1,0 +1,15 @@
+@use '../../styles/globals.scss' as globals;
+
+* {
+  outline: 1px solid red;
+}
+
+.team {
+  width: 100%;
+
+  .team-title {
+    @include globals.text-h2;
+
+    color: globals.$white-txt;
+  }
+}
