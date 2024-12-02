@@ -6,28 +6,14 @@
   padding: 0;
   margin: 0;
   width: 100%;
-  border: 2px solid;
-  border-image-source: linear-gradient(90deg, globals.$black-bg -2.44%, globals.$grey-border 50%, globals.$black-bg 102.44%);
   z-index: 5;
-
-  @keyframes shimmer {
-    0% {
-      background-position: -100%;
-    }
-
-    100% {
-      background-position: 200%;
-    }
-  }
 
   .shimmer-text {
     padding: 76px 0 92px 12%;
     height: auto;
-    background: linear-gradient(90deg, globals.$white-txt, globals.$main-blue, globals.$white-txt);
     background-size: 200% auto;
-    color: transparent;
+    color: globals.$white-txt;
     background-clip: text;
-    animation: shimmer 2s linear infinite;
     z-index: 2;
 
     @include globals.desktop-xl;
@@ -45,7 +31,7 @@
     }
 
     .shimmer-span {
-      background: linear-gradient(90deg, globals.$main-blue, #af4261, globals.$main-blue);
+      color: globals.$main-blue;
       background-size: 200% auto;
       background-clip: text;
       animation: shimmer 2s linear infinite;
