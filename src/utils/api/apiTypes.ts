@@ -12,3 +12,11 @@ export type Project = {
   webm: string;
   mp4: string;
 };
+
+export type TeamMember = {
+  id: number;
+  item_number: number;
+  image: string;
+  name: string;
+  position: string;
+};
