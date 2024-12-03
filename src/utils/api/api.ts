@@ -1,10 +1,11 @@
 import { fetchData } from '../fetchData';
-import { Advantage, Project, TeamMember } from './apiTypes';
+import { Advantage, Metric, Project, TeamMember } from './apiTypes';
 
 interface ApiInterface {
   getAdvantages: (lang) => Promise<{ data: Advantage[] }>;
   getProjects: (lang) => Promise<{ data: Project[] }>;
   getTeam: (lang) => Promise<{ data: TeamMember[] }>;
+  getMetrics: (lang) => Promise<{ data: Metric[] }>;
 }
 
 class Api implements ApiInterface {
@@ -16,6 +17,9 @@ class Api implements ApiInterface {
   }
   async getTeam(lang): Promise<{ data: TeamMember[] }> {
     return fetchData(lang, 'team/');
+  }
+  async getMetrics(lang): Promise<{ data: Metric[] }> {
+    return fetchData(lang, 'metrics/');
   }
 }
 
