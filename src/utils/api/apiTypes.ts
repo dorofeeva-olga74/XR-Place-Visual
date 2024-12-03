@@ -34,3 +34,10 @@ export type SchemaStage = {
   title: string;
   description: string;
 };
+
+export type Claim = {
+  username: string;
+  contacts: string;
+  company: string;
+  comment: string;
+};

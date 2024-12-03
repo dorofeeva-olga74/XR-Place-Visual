@@ -2,13 +2,13 @@ import { API_URL_RU } from './consts';
 import { API_URL_EN } from './consts';
 
 interface FetchOptions extends RequestInit {
-  data?: object;
+  payload?: object;
 }
 
-export const fetchData = async (lang: 'RU' | 'EN', endpoint: string, { data, ...customOptions }: FetchOptions | Record<string, never> = {}) => {
+export const fetchData = async (lang: 'RU' | 'EN', endpoint: string, { payload, ...customOptions }: FetchOptions | Record<string, never> = {}) => {
   const API_URL = lang === 'EN' ? API_URL_EN : API_URL_RU;
   const headers: RequestInit['headers'] = {};
-  if (data) {
+  if (payload) {
     headers['Content-Type'] = 'application/json;charset=utf-8';
   }
   const options: RequestInit = {
@@ -19,8 +19,8 @@ export const fetchData = async (lang: 'RU' | 'EN', endpoint: string, { data, ...
     },
     ...customOptions,
   };
-  if (data) {
-    options.body = JSON.stringify(data);
+  if (payload) {
+    options.body = JSON.stringify(payload);
   }
   try {
     const res = await fetch(`${API_URL}/${endpoint}`, options);
