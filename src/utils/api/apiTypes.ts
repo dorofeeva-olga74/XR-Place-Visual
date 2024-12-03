@@ -20,3 +20,10 @@ export type TeamMember = {
   name: string;
   position: string;
 };
+
+export type Metric = {
+  id: number;
+  item_number: number;
+  percent: number;
+  description: string;
+};
