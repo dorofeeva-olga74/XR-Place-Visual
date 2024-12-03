@@ -27,3 +27,10 @@ export type Metric = {
   percent: number;
   description: string;
 };
+
+export type SchemaStage = {
+  id: number;
+  item_number: number;
+  title: string;
+  description: string;
+};
