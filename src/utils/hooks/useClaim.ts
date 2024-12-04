@@ -11,5 +11,5 @@ export const useClaim = (lang) => {
       throw new Error(error.message);
     },
   });
-  return createClaim;
+  return { createClaim };
 };

@@ -4,6 +4,7 @@ import IntroButton from '../Ui/IntroButton/IntroButton';
 import { useTranslation } from 'react-i18next';
 import { FormProvider, SubmitHandler, useForm, useFormContext } from 'react-hook-form';
 import { Claim as ClaimInputs } from '../../utils/api/apiTypes';
+import { useClaim } from '../../utils/hooks/useClaim';
 
 function Input({ input }) {
   const { t } = useTranslation();
@@ -14,7 +15,10 @@ function Input({ input }) {
 function Claim() {
   const { t } = useTranslation();
   const methods = useForm<ClaimInputs>();
-  const onSubmit: SubmitHandler<ClaimInputs> = (data) => console.log(data);
+  const { createClaim } = useClaim('RU');
+  const onSubmit: SubmitHandler<ClaimInputs> = (data) => {
+    createClaim.mutateAsync(data);
+  };
 
   return (
     <FormProvider {...methods}>

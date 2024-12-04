@@ -14,7 +14,7 @@ export const inputs = [
   },
   {
     name: 'company',
-    required: false,
+    required: true,
   },
   {
     name: 'comment',
