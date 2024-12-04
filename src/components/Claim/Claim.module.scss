@@ -48,6 +48,7 @@
   @media (width <= 768px) {
     padding-left: 0;
     padding-bottom: 40px;
+    row-gap: 20px;
   }
 }
 
@@ -62,6 +63,10 @@
 
   @media (width <= 768px) {
     @include globals.mobile-m;
+  }
+
+  @media (width <= 360px) {
+    padding: 11px 0;
   }
 
   &:focus {
@@ -88,6 +93,10 @@
   color: globals.$white-txt;
 
   @include globals.text-text-xs;
+
+  @media (width <= 768px) {
+    padding-left: 0;
+  }
 }
 
 .claim__policy {

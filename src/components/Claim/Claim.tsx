@@ -9,11 +9,7 @@ function Input({ input }) {
 function Claim() {
   return (
     <form className={styles.claim__container}>
-      <h2 className={styles.claim__title}>
-        НАЗНАЧИТЬ
-        <br />
-        ДЕМО
-      </h2>
+      <h2 className={styles.claim__title}>НАЗНАЧИТЬ ДЕМО</h2>
       <div className={styles.claim__inputs}>
         {inputs.map((input, index) => {
           return <Input key={`${input.name} - ${index}`} input={input} />;
