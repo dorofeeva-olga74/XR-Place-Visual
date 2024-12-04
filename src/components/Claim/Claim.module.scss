@@ -10,14 +10,16 @@
     'title inputs'
     'title button'
     'title annotation';
+  padding: 160px 0 120px;
 }
 
 .claim__title {
   @include globals.text-h2;
 
   grid-area: title;
+  hyphens: auto;
   color: globals.$white-txt;
-  border-right: 2px solid globals.$grey-border;
+  border-right: 1px solid globals.$grey-border;
 }
 
 .claim__inputs {
@@ -41,6 +43,11 @@
   &:focus {
     outline: none;
   }
+
+  &::placeholder {
+    color: globals.$grey-border;
+    opacity: 1;
+  }
 }
 
 .claim__button {
@@ -52,7 +59,7 @@
   @include globals.text-text-xs;
 
   grid-area: annotation;
-  padding-left: 20px;
+  padding: 20px 0 20px 20px;
   color: globals.$white-txt;
 }
 

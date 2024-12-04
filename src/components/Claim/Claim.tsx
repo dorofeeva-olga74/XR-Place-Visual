@@ -2,7 +2,7 @@ import styles from './Claim.module.scss';
 import { inputs } from '../../utils/consts';
 import IntroButton from '../Ui/IntroButton/IntroButton';
 
-function Input(input) {
+function Input({ input }) {
   return <input className={styles.claim__input} name={input.name} placeholder={input.placeholder} required={input.required}></input>;
 }
 
