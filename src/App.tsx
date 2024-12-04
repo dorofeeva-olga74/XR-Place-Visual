@@ -1,15 +1,14 @@
-import styles from './App.module.scss'
+import Layout from './components/Layout/Layout';
+import Widget from './components/Widget/Widget';
 
 function App() {
-
   return (
     <>
-      <p className={styles.title}>
-        XR Place <br />
-        Команда №2
-      </p>
+      <Layout>
+        <Widget />
+      </Layout>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

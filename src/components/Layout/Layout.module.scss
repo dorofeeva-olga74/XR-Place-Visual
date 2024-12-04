@@ -1,0 +1,11 @@
+@use '/src/styles/globals';
+
+.layout {
+  min-height: 100vh;
+  padding: 0 34px;
+  background-color: globals.$black-bg;
+
+  @media (width <= 320px) {
+    padding: 0 20px;
+  }
+}

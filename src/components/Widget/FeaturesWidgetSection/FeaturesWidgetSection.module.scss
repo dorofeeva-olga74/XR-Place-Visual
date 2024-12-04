@@ -1,0 +1,57 @@
+@use '../../../styles/globals' as globals;
+
+.features-widget-set {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .features-widget-title {
+    color: globals.$white-txt;
+    margin: 0 0 5rem;
+
+    @include globals.text-h2;
+
+    @media (width <= 768px) {
+      margin: 0 0 2.5rem;
+
+      @include globals.mobile-h2;
+    }
+  }
+
+  .features-widget-fragment {
+    display: flex;
+    flex-direction: row;
+
+    @media (width <= 768px) {
+      flex-direction: column-reverse;
+    }
+
+    .features-widget-iframe-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 56.25%;
+      margin: 0 5rem 0 0;
+
+      @media (width <= 768px) {
+        width: 100%;
+        margin: 1.25rem 0 0;
+      }
+    }
+
+    .features-widget-iframe {
+      border: 0;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .features-widget-img img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 0.625rem;
+    }
+  }
+}
