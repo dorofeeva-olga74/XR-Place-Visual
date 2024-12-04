@@ -11,15 +11,27 @@
     'title button'
     'title annotation';
   padding: 160px 0 120px;
+
+  @media (width <= 768px) {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 0;
+  }
 }
 
 .claim__title {
-  @include globals.text-h2;
-
   grid-area: title;
   hyphens: auto;
   color: globals.$white-txt;
   border-right: 1px solid globals.$grey-border;
+
+  @include globals.text-h2;
+
+  @media (width <= 768px) {
+    border-right: none;
+
+    @include globals.mobile-h2;
+  }
 }
 
 .claim__inputs {
@@ -31,14 +43,24 @@
   padding-bottom: 60px;
   background-color: globals.$black-bg;
   color: globals.$grey-border;
+
+  @media (width <= 768px) {
+    padding-left: 0;
+  }
 }
 
 .claim__input {
   background-color: globals.$black-bg;
-  color: globals.$grey-border;
+  color: globals.$white-txt;
   border: none;
   padding: 16px 0;
   border-bottom: 1px solid globals.$grey-border;
+
+  @include globals.text-text-m;
+
+  @media (width <= 768px) {
+    @include globals.mobile-m;
+  }
 
   &:focus {
     outline: none;
@@ -46,21 +68,24 @@
 
   &::placeholder {
     color: globals.$grey-border;
-    opacity: 1;
   }
 }
 
 .claim__button {
   grid-area: button;
   padding-left: 20px;
+
+  @media (width <= 768px) {
+    padding-left: 0;
+  }
 }
 
 .claim__annotation {
-  @include globals.text-text-xs;
-
   grid-area: annotation;
   padding: 20px 0 20px 20px;
   color: globals.$white-txt;
+
+  @include globals.text-text-xs;
 }
 
 .claim__policy {
