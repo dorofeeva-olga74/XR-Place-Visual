@@ -8,7 +8,7 @@ function Input(input) {
 
 function Claim() {
   return (
-    <div className={styles['claim__container']}>
+    <div className={styles.claim__container}>
       <form>
         <h2 className={styles.claim - title}>Назначить демо</h2>
         {inputs.map((input, index) => {
