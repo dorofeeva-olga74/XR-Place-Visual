@@ -13,10 +13,9 @@
 }
 
 .claim__title {
-  grid-area: title;
-
   @include globals.text-h2;
 
+  grid-area: title;
   color: globals.$white-txt;
   border-right: 2px solid globals.$grey-border;
 }
@@ -50,10 +49,9 @@
 }
 
 .claim__annotation {
-  grid-area: annotation;
-
   @include globals.text-text-xs;
 
+  grid-area: annotation;
   padding-left: 20px;
   color: globals.$white-txt;
 }
