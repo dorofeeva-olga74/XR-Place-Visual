@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { FormProvider, SubmitHandler, useForm, useFormContext } from 'react-hook-form';
 import { Claim as ClaimInputs } from '../../utils/api/apiTypes';
 import { useClaim } from '../../utils/hooks/useClaim';
+import { useEffect } from 'react';
 
 function Input({ input }) {
   const { t } = useTranslation();
@@ -19,6 +20,11 @@ function Claim() {
   const onSubmit: SubmitHandler<ClaimInputs> = (data) => {
     createClaim.mutateAsync(data);
   };
+  useEffect(() => {
+    if (createClaim.isSuccess) {
+      methods.reset();
+    }
+  }, [createClaim.isSuccess, methods]);
 
   return (
     <FormProvider {...methods}>
@@ -30,7 +36,10 @@ function Claim() {
           })}
         </div>
         <div className={styles.claim__button}>
-          <IntroButton type="submit">{t('components.claim.submit')}</IntroButton>
+          <IntroButton type="submit" disabled={createClaim.isPending}>
+            {createClaim.isPending ? t('components.claim.submitting') : t('components.claim.submit')}
+          </IntroButton>
+          {createClaim.isSuccess && <p className={styles.claim__response}>{createClaim.data.message}</p>}
         </div>
         <small className={styles.claim__annotation}>
           {t('components.claim.annotation')} <span className={styles.claim__policy}>{t('components.claim.policy1')}</span> {t('components.claim.and')} <span className={styles.claim__policy}>{t('components.claim.policy2')}</span>
