@@ -1,3 +1,4 @@
+import Claim from './components/Claim/Claim';
 import Layout from './components/Layout/Layout';
 import Widget from './components/Widget/Widget';
 
@@ -6,6 +7,7 @@ function App() {
     <>
       <Layout>
         <Widget />
+        <Claim />
       </Layout>
     </>
   );
