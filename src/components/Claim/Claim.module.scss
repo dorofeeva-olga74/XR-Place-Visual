@@ -1,3 +1,63 @@
+@use './../../styles/globals';
+
 .claim__container {
   display: grid;
+  grid-template: repeat(6, 1fr) / repeat(2, 1fr);
+  grid-template-areas:
+    'title inputs'
+    'title inputs'
+    'title inputs'
+    'title inputs'
+    'title button'
+    'title annotation';
+}
+
+.claim__title {
+  grid-area: title;
+
+  @include globals.text-h2;
+
+  color: globals.$white-txt;
+  border-right: 2px solid globals.$grey-border;
+}
+
+.claim__inputs {
+  grid-area: inputs;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-bottom: 60px;
+  background-color: globals.$black-bg;
+  color: globals.$grey-border;
+}
+
+.claim__input {
+  background-color: globals.$black-bg;
+  color: globals.$grey-border;
+  border: none;
+  padding: 16px 0;
+  border-bottom: 1px solid globals.$grey-border;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.claim__button {
+  grid-area: button;
+  padding-left: 20px;
+}
+
+.claim__annotation {
+  grid-area: annotation;
+
+  @include globals.text-text-xs;
+
+  padding-left: 20px;
+  color: globals.$white-txt;
+}
+
+.claim__policy {
+  color: globals.$main-blue;
 }
