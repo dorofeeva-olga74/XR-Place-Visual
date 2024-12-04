@@ -32,6 +32,18 @@ i18n
                 items: ['Виджет легко встраивается в любой сайт', 'Доступно с любого устройства', 'Интерактивное вовлечение покупателей', 'Точный вид из окна для каждой планировки', 'Свобода перемещения как в компьютерной игре'],
               },
             },
+            claim: {
+              title: 'НАЗНАЧИТЬ ДЕМО',
+              username: 'Имя*',
+              contacts: 'Телефон / WhatsApp / Почта*',
+              company: 'Компания',
+              comment: 'Комментарий',
+              submit: 'Отправить заявку',
+              annotation: 'Нажимая на кнопку, вы принимаете',
+              policy1: 'условия использования',
+              and: 'и',
+              policy2: 'политику конфиденциальности',
+            },
             footer: {
               allRightsReserved: 'Все права защищены',
             },
@@ -57,6 +69,18 @@ i18n
               list: {
                 items: ['Widget easily integrates into any site', 'Available on any device', 'Interactive customer engagement', 'Accurate window view for each layout', 'Freedom of movement like in a computer game'],
               },
+            },
+            claim: {
+              title: 'BOOK A DEMO',
+              username: 'Name*',
+              contacts: 'Phone / WhatsApp / E-mail*',
+              company: 'Company',
+              comment: 'Comments',
+              submit: 'Book a demo',
+              annotation: 'By submitting this form you agree to the',
+              policy1: 'terms and conditions',
+              and: 'and',
+              policy2: 'privacy policy',
             },
             footer: {
               allRightsReserved: 'All rights reserved',
