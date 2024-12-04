@@ -9,8 +9,8 @@ const FeaturesWidgetSection: React.FC = () => {
     <div className={styles['features-widget-set']}>
       <h2 className={styles['features-widget-title']}>{t('components.widget.featuresWidgetSection.title')}</h2>
       <div className={styles['features-widget-fragment']}>
-        <div className={styles['features-widget-img']}>
-          <img src="/src/vendor/images/WidgetImage.png" alt={t('components.widget.featuresWidgetSection.imageAlt')} />
+        <div className={styles['features-widget-iframe-container']}>
+          <iframe className={styles['features-widget-iframe']} src="https://xrplace.io/video/apartment_1.mp4" title={t('components.widget.featuresWidgetSection.imageAlt')}></iframe>
         </div>
         <List />
       </div>
