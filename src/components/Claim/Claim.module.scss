@@ -29,6 +29,7 @@
 
   @media (width <= 768px) {
     border-right: none;
+    padding-bottom: 40px;
 
     @include globals.mobile-h2;
   }
@@ -46,6 +47,7 @@
 
   @media (width <= 768px) {
     padding-left: 0;
+    padding-bottom: 40px;
   }
 }
 
