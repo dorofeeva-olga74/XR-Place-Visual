@@ -1,3 +1,4 @@
+import { Lang } from './api/apiTypes';
 import { API_URL_RU } from './consts';
 import { API_URL_EN } from './consts';
 
@@ -5,7 +6,7 @@ interface FetchOptions extends RequestInit {
   payload?: object;
 }
 
-export const fetchData = async (lang: 'RU' | 'EN', endpoint: string, { payload, ...customOptions }: FetchOptions | Record<string, never> = {}) => {
+export const fetchData = async (lang: Lang, endpoint: string, { payload, ...customOptions }: FetchOptions | Record<string, never> = {}) => {
   const API_URL = lang === 'EN' ? API_URL_EN : API_URL_RU;
   const headers: RequestInit['headers'] = {};
   if (payload) {

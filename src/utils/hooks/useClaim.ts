@@ -1,8 +1,8 @@
 import { useQueryClient, useMutation } from '@tanstack/react-query';
 import { api } from '../api/api';
-import { Claim } from '../api/apiTypes';
+import { Claim, Lang } from '../api/apiTypes';
 
-export const useClaim = (lang) => {
+export const useClaim = (lang: Lang) => {
   const queryClient = useQueryClient();
   const createClaim = useMutation({
     mutationFn: (payload: Claim) => api.createClaim(lang, payload),
