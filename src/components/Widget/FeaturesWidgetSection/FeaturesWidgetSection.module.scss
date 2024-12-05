@@ -26,16 +26,25 @@
       flex-direction: column-reverse;
     }
 
-    .features-widget-img {
-      display: flex;
-      width: 57.7%;
-      height: auto;
+    .features-widget-iframe-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 56.25%;
       margin: 0 5rem 0 0;
 
       @media (width <= 768px) {
         width: 100%;
         margin: 1.25rem 0 0;
       }
+    }
+
+    .features-widget-iframe {
+      border: 0;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
     }
 
     .features-widget-img img {
