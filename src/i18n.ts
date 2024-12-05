@@ -18,6 +18,16 @@ i18n
             header: {
               advantages: 'Преимущества',
             },
+            team: {
+              title: 'КТО МЫ?',
+              imageAlt: 'Фотография',
+              missionTitle5: 'МИССИЯ',
+              missionSubtitle5: 'НАША',
+              missionText5: 'Увеличить продажи недвижимости нашим клиентам с помощью инновационных 3D web технологий',
+              valuesTitle9: 'ЦЕННОСТИ',
+              valuesSubtitle9: 'НАШИ',
+              valuesText9: 'Честность, открытость, доверие, уважение, порядочность, взаимовыручка — такие ценности помогают выстроить хорошую атмосферу в команде',
+            },
             widget: {
               featuresWidgetSection: {
                 title: '3D-ВИДЖЕТ',
@@ -56,6 +66,16 @@ i18n
           components: {
             header: {
               advantages: 'Advantages',
+            },
+            team: {
+              title: 'WHO ARE WE?',
+              imageAlt: 'Photo',
+              missionTitle5: 'MISSION',
+              missionSubtitle5: 'OUR',
+              missionText5: 'Increase real estate sales for our clients using innovative 3D web technologies',
+              valuesTitle9: 'VALUES',
+              valuesSubtitle9: 'OUR',
+              valuesText9: 'Honesty, openness, trust, respect, integrity, mutual assistance—these values help to build a good atmosphere in the team.',
             },
             widget: {
               featuresWidgetSection: {
