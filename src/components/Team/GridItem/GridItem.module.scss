@@ -2,25 +2,13 @@
 
 .grid-item-container {
   display: flex;
+  position: relative;
   width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-right: 2px solid globals.$dark-grey-border;
   border-bottom: 2px solid globals.$dark-grey-border;
-
-  [style*='grid-area: item3'],
-  [style*='grid-area: item6'],
-  [style*='grid-area: values'],
-  [style*='grid-area: item12'] {
-    border-right: none;
-  }
-
-  &[style*='grid-area: item10'],
-  [style*='grid-area: item11'],
-  [style*='grid-area: item12'] {
-    border-bottom: none;
-  }
 
   @media (width <= 768px) {
     width: 100%;
@@ -29,10 +17,20 @@
     border-radius: 0;
     border: none;
 
-    &[style*='grid-area: title'],
-    [style*='grid-area: mission'] {
+    &[style*='grid-area: title'] {
       border-bottom: 2px solid globals.$dark-grey-border;
     }
+  }
+}
+
+.grid-item-circle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: -8px;
+
+  @media (width <= 768px) {
+    display: none;
   }
 }
 
@@ -41,16 +39,6 @@
   align-items: flex-start;
   color: globals.$white-txt;
   grid-area: title;
-
-  @include globals.text-h2;
-
-  @media (width <= 1800px) {
-    @include globals.desktop-xl;
-  }
-
-  @media (width <= 768px) {
-    @include globals.mobile-h2;
-  }
 }
 
 .grid-item-container[style*='grid-area: title'] {

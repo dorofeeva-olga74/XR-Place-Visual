@@ -2,16 +2,22 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './Team.module.scss';
 import GridItem from './GridItem/GridItem';
+import { useTeam } from '../../utils/hooks/useTeam';
 
 const Team: React.FC = () => {
   const { t } = useTranslation();
+  const team = useTeam('RU');
+
   return (
     <div className={styles['team']}>
       <div className={styles['team-grid']}>
-        <GridItem type="custom" gridArea="title" customContent={<h2>{t('components.team.title')}</h2>} />
+        <GridItem type="custom" gridArea="title" customContent={<h2 className={styles['team-title']}>{t('components.team.title')}</h2>} />
         <GridItem gridArea="item2" />
         <GridItem gridArea="item3" />
-        <GridItem type="image" content="https://test-xrp.ru/media/image_team/person_01.png" gridArea="artem" alt={t('components.team.imageAlt4')} title={t('components.team.name4')} subtitle="Co-founder & CEO" />
+        {team.isSuccess &&
+          team.data.map((item, index) => {
+            return <GridItem key={`${item.id} - ${index}`} type="image" content={item.image} gridArea={item.item_number === 1 ? 'artem' : 'victor'} alt={`${t('components.team.imageAlt')} ${item.name}`} title={item.name} subtitle={item.position} />;
+          })}
         <GridItem
           type="custom"
           gridArea="mission"
@@ -25,7 +31,6 @@ const Team: React.FC = () => {
         />
         <GridItem gridArea="item6" />
         <GridItem gridArea="item7" />
-        <GridItem type="image" content="https://test-xrp.ru/media/image_team/person_02.png" gridArea="victor" alt={t('components.team.imageAlt8')} title={t('components.team.name8')} subtitle="Co-founder & Production Director" />
         <GridItem
           type="custom"
           gridArea="values"
