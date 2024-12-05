@@ -1,32 +1,32 @@
 import { fetchData } from '../fetchData';
-import { Advantage, Claim, Metric, Project, SchemaStage, TeamMember } from './apiTypes';
+import { Advantage, Claim, Lang, Metric, Project, SchemaStage, TeamMember } from './apiTypes';
 
 interface ApiInterface {
-  getAdvantages: (lang: string) => Promise<{ data: Advantage[] }>;
-  getProjects: (lang: string) => Promise<{ data: Project[] }>;
-  getTeam: (lang: string) => Promise<{ data: TeamMember[] }>;
-  getMetrics: (lang: string) => Promise<{ data: Metric[] }>;
-  getSchema: (lang: string) => Promise<{ data: SchemaStage[] }>;
-  createClaim: (lang: string, payload: Claim) => Promise<{ data: { message: string; data: Claim } }>;
+  getAdvantages: (lang: Lang) => Promise<{ data: Advantage[] }>;
+  getProjects: (lang: Lang) => Promise<{ data: Project[] }>;
+  getTeam: (lang: Lang) => Promise<{ data: TeamMember[] }>;
+  getMetrics: (lang: Lang) => Promise<{ data: Metric[] }>;
+  getSchema: (lang: Lang) => Promise<{ data: SchemaStage[] }>;
+  createClaim: (lang: Lang, payload: Claim) => Promise<{ data: { message: string; data: Claim } }>;
 }
 
 class Api implements ApiInterface {
-  async getAdvantages(lang: string): Promise<{ data: Advantage[] }> {
+  async getAdvantages(lang: Lang): Promise<{ data: Advantage[] }> {
     return fetchData(lang, 'advantages/');
   }
-  async getProjects(lang: string): Promise<{ data: Project[] }> {
+  async getProjects(lang: Lang): Promise<{ data: Project[] }> {
     return fetchData(lang, 'examples/');
   }
-  async getTeam(lang: string): Promise<{ data: TeamMember[] }> {
+  async getTeam(lang: Lang): Promise<{ data: TeamMember[] }> {
     return fetchData(lang, 'team/');
   }
-  async getMetrics(lang: string): Promise<{ data: Metric[] }> {
+  async getMetrics(lang: Lang): Promise<{ data: Metric[] }> {
     return fetchData(lang, 'metrics/');
   }
-  async getSchema(lang: string): Promise<{ data: SchemaStage[] }> {
+  async getSchema(lang: Lang): Promise<{ data: SchemaStage[] }> {
     return fetchData(lang, 'stages/');
   }
-  async createClaim(lang: string, payload: Claim): Promise<{ data: { message: string; data: Claim } }> {
+  async createClaim(lang: Lang, payload: Claim): Promise<{ data: { message: string; data: Claim } }> {
     return fetchData(lang, 'claim/', { method: 'POST', payload });
   }
 }
