@@ -1,0 +1,110 @@
+@use './../../styles/globals';
+
+.claim__container {
+  display: grid;
+  grid-template: repeat(6, 1fr) / repeat(2, 1fr);
+  grid-template-areas:
+    'title inputs'
+    'title inputs'
+    'title inputs'
+    'title inputs'
+    'title button'
+    'title annotation';
+  padding: 160px 0 120px;
+
+  @media (width <= 768px) {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 0;
+  }
+}
+
+.claim__title {
+  grid-area: title;
+  hyphens: auto;
+  color: globals.$white-txt;
+  border-right: 1px solid globals.$grey-border;
+
+  @include globals.text-h2;
+
+  @media (width <= 768px) {
+    border-right: none;
+    padding-bottom: 40px;
+
+    @include globals.mobile-h2;
+  }
+}
+
+.claim__inputs {
+  grid-area: inputs;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-bottom: 60px;
+  background-color: globals.$black-bg;
+  color: globals.$grey-border;
+
+  @media (width <= 768px) {
+    padding-left: 0;
+    padding-bottom: 40px;
+    row-gap: 20px;
+  }
+}
+
+.claim__input {
+  background-color: globals.$black-bg;
+  color: globals.$white-txt;
+  border: none;
+  padding: 16px 0;
+  border-bottom: 1px solid globals.$grey-border;
+
+  @include globals.text-text-m;
+
+  @media (width <= 768px) {
+    @include globals.mobile-m;
+  }
+
+  @media (width <= 360px) {
+    padding: 11px 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: globals.$grey-border;
+  }
+}
+
+.claim__button {
+  grid-area: button;
+  padding-left: 20px;
+
+  @media (width <= 768px) {
+    padding-left: 0;
+  }
+}
+
+.claim__annotation {
+  grid-area: annotation;
+  padding: 20px 0 20px 20px;
+  color: globals.$white-txt;
+
+  @include globals.text-text-xs;
+
+  @media (width <= 768px) {
+    padding-left: 0;
+  }
+}
+
+.claim__policy {
+  color: globals.$main-blue;
+}
+
+.claim__response {
+  color: globals.$main-blue;
+  padding: 10px 0;
+  text-align: center;
+}
