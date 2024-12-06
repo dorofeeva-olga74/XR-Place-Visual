@@ -60,6 +60,12 @@
     justify-content: center;
     align-items: center;
 
+    &_button {
+      border: none;
+      background-color: globals.$black-bg;
+      cursor: pointer;
+    }
+
     &_image {
       width: 120px;
       height: 120px;
