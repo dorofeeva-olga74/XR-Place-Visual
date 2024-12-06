@@ -39,7 +39,7 @@ function Claim() {
           <IntroButton type="submit" disabled={createClaim.isPending}>
             {createClaim.isPending ? t('components.claim.submitting') : t('components.claim.submit')}
           </IntroButton>
-          {createClaim.isSuccess && <p className={styles.claim__response}>{createClaim.data.message}</p>}
+          {createClaim.isSuccess && <span className={styles.claim__response}>{createClaim.data.message}</span>}
         </div>
         <small className={styles.claim__annotation}>
           {t('components.claim.annotation')} <span className={styles.claim__policy}>{t('components.claim.policy1')}</span> {t('components.claim.and')} <span className={styles.claim__policy}>{t('components.claim.policy2')}</span>
