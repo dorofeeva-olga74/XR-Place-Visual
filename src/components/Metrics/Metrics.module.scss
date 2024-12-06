@@ -1,0 +1,114 @@
+@use '../../styles/globals.scss' as globals;
+
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 160px;
+  color: globals.$white-txt;
+
+  .metrics-title {
+    width: 100%;
+    margin-bottom: 100px;
+
+    @include globals.text-h2;
+
+    @media (width <=850px) {
+      font-size: 50px;
+    }
+
+    @media (width <=768px) {
+      margin-bottom: 40px;
+
+      @include globals.mobile-h2;
+    }
+  }
+
+  .metrics-details {
+    display: flex;
+    width: calc(100% - 200px);
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 0 50px;
+
+    & > :nth-child(1),
+    & > :nth-child(2) {
+      border-right: 1px solid globals.$grey-border;
+    }
+
+    @media (width <=1150px) {
+      width: 100%;
+      justify-content: space-between;
+      gap: 0 20px;
+    }
+
+    @media (width <=500px) {
+      width: 100%;
+      flex-direction: column;
+
+      & > :nth-child(1),
+      & > :nth-child(2) {
+        border-right: none;
+        border-bottom: 1px solid globals.$grey-border;
+      }
+
+      & > :nth-child(1) {
+        padding-top: 0;
+      }
+
+      & > :nth-child(3) {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  .metrics-set {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 33.3%;
+    height: 100%;
+    padding-bottom: 120px;
+    flex-grow: 1;
+
+    .metrics-text {
+      @include globals.text-text-m;
+
+      @media (width <= 850px) {
+        @include globals.mobile-m;
+      }
+    }
+
+    .metrics-span {
+      @include globals.text-big-comment;
+
+      @media (width <=1150px) {
+        @include globals.text-h2;
+      }
+
+      @media (width <= 850px) {
+        font-size: 50px;
+      }
+
+      @media (width <= 500px) {
+        font-size: 90px;
+        font-weight: 400;
+        line-height: 99px;
+      }
+    }
+
+    @media (width <= 850px) {
+      padding-bottom: 63px;
+    }
+
+    @media (width <=500px) {
+      width: 100%;
+      padding: 24px 0;
+    }
+  }
+
+  @media (width <= 768px) {
+    padding-bottom: 80px;
+  }
+}
