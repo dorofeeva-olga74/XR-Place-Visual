@@ -9,10 +9,24 @@
   padding: 160px 0;
   color: globals.$white-txt;
 
+  @media (width <= 768px) {
+    gap: 40px;
+    padding: 80px 0;
+  }
+
+  @media (width <= 460px) {
+    gap: 28px;
+    padding: 18px 0;
+  }
+
   &__title {
     align-self: start;
 
     @include globals.text-h2;
+
+    @media (width <= 768px) {
+      @include globals.mobile-h2;
+    }
   }
 
   &__grid {
@@ -21,6 +35,16 @@
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+
+    @media (width <= 768px) {
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (width <= 460px) {
+      grid-template-rows: 177px 1fr 1fr 1fr 23px;
+      grid-template-columns: 1fr;
+    }
   }
 
   &__description {
@@ -28,6 +52,10 @@
     display: flex;
     flex-direction: column;
     padding: 0 70px;
+
+    @media (width <= 768px) {
+      padding: 0 29px;
+    }
 
     &_count {
       @include globals.text-big-comment;
@@ -56,6 +84,11 @@
     &_container {
       max-width: 441px;
       height: 434px;
+
+      @media (width <= 768px) {
+        max-width: 340px;
+        height: 280px;
+      }
     }
   }
 
@@ -69,11 +102,24 @@
       border: none;
       background-color: globals.$black-bg;
       cursor: pointer;
+
+      @media (width <= 460px) {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+      }
     }
 
     &_image {
       width: 120px;
       height: 120px;
     }
+  }
+
+  &__loadmore {
+    color: globals.$white-txt;
+    border-bottom: 1px solid globals.$white-txt;
+
+    @include globals.mobile-m;
   }
 }

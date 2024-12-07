@@ -2,8 +2,10 @@ import { useProjects } from '../../utils/hooks/useProjects';
 import styles from './Projects.module.scss';
 import arrowButton from './../../vendor/images/arrow-button.svg';
 import { useEffect, useMemo, useState } from 'react';
+import useWindowWidth from '../../utils/hooks/useWindowWidth';
 
 function Projects() {
+  const { width } = useWindowWidth();
   const [index, setIndex] = useState(0);
   const [projectsDisplayed, setProjectsDisplayed] = useState([]);
   const data = useProjects('RU');
@@ -17,10 +19,12 @@ function Projects() {
     }
   };
   useEffect(() => {
-    if (projects) {
+    if (projects && width > 460) {
       setProjectsDisplayed(projects.slice(index, index + 4));
+    } else {
+      setProjectsDisplayed(projects.slice(index, index + 3));
     }
-  }, [setProjectsDisplayed, index, projects]);
+  }, [setProjectsDisplayed, index, projects, width]);
 
   if (projectsDisplayed)
     return (
@@ -47,7 +51,7 @@ function Projects() {
           })}
           <li className={styles.projects__arrow}>
             <button className={styles.projects__arrow_button} type="button" onClick={handleClick}>
-              <img className={styles.projects__arrow_image} src={arrowButton}></img>
+              {width > 460 ? <img className={styles.projects__arrow_image} src={arrowButton}></img> : <p className={styles.projects__loadmore}>Загрузить ещё</p>}
             </button>
           </li>
         </ul>
