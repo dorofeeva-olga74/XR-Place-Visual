@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import styles from './List.module.scss';
 import { motion, useScroll } from 'motion/react';
 
-const ListItem = forwardRef(({ text }, ref) => {
+const ListItem = forwardRef(({ text }: { text: string }, ref) => {
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'end end'],
