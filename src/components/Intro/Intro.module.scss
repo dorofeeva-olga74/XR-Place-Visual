@@ -1,0 +1,111 @@
+@import '../../styles/globals';
+
+.intro {
+  max-width: 1440px;
+  position: relative;
+  margin: 0 auto;
+
+  @media (width < 1440px) {
+    max-width: 768px;
+  }
+
+  @media (width < 768px) {
+    max-width: 360px;
+  }
+
+  .intro-img {
+    max-width: 1440px;
+    position: relative;
+    margin: 0 auto;
+
+    @media (width = 1440px) {
+      margin-left: -34px;
+    }
+
+    @media (width < 1440px) {
+      max-width: 768px;
+      margin-left: -34px;
+    }
+
+    @media (width < 768px) {
+      max-width: 360px;
+      margin-left: -20px;
+      margin-top: -32px;
+    }
+  }
+
+  .intro-text {
+    display: flex;
+    justify-content: space-between;
+
+    @media (width < 1440px) {
+      width: 700px;
+      background-color: transparent;
+      position: absolute;
+      bottom: 40px;
+      z-index: 2;
+    }
+
+    .intro-text-leftbox {
+      padding-top: 20px;
+      width: 444px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      @media (width < 1440px) {
+        padding-top: 0;
+        width: 329px;
+      }
+
+      .intro-text-leftbox-text {
+        padding-right: 66px;
+
+        @include text-text-m;
+
+        color: $white-txt;
+
+        @media (width < 1440px) {
+          padding-right: 0;
+        }
+      }
+    }
+
+    .intro-text-rightbox {
+      width: 559px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @media (width < 1440px) {
+        width: 285px;
+        justify-content: start;
+      }
+
+      .intro-text-rightbox-h1 {
+        margin: 0;
+
+        @include desktop-h1;
+
+        padding-bottom: 28px;
+        padding-top: 20px;
+        color: $white-txt;
+
+        @media (width < 1440px) {
+          padding-top: 0;
+          padding-bottom: 3px;
+          font-size: 64px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 100%;
+        }
+      }
+
+      .intro-text-rightbox-text {
+        @include text-text-m;
+
+        color: $white-txt;
+      }
+    }
+  }
+}
