@@ -3,11 +3,13 @@ import styles from './Projects.module.scss';
 import arrowButton from './../../vendor/images/arrow-button.svg';
 import { useEffect, useMemo, useState } from 'react';
 import useWindowWidth from '../../utils/hooks/useWindowWidth';
+import { useTranslation } from 'react-i18next';
 
 function Projects() {
   const { width } = useWindowWidth();
   const [index, setIndex] = useState(0);
   const [projectsDisplayed, setProjectsDisplayed] = useState([]);
+  const { t } = useTranslation();
   const data = useProjects('RU');
   // artificially make projects array longer to demonstrate 'load more' button click effect
   const projects = useMemo(() => (data.isSuccess ? data.data.concat(data.data) : []), [data.isSuccess, data.data]);
@@ -29,11 +31,11 @@ function Projects() {
   if (projectsDisplayed)
     return (
       <div className={styles.projects}>
-        <h2 className={styles.projects__title}>Реализованные проекты</h2>
+        <h2 className={styles.projects__title}>{t('components.projects.completedProjects')}</h2>
         <ul className={styles.projects__grid}>
           <li className={styles.projects__description}>
             <h2 className={styles.projects__description_count}>{projects.length}</h2>
-            <p className={styles.projects__description_text}>проектов с крупными заказчиками</p>
+            <p className={styles.projects__description_text}>{t('components.projects.projectsWithBigCompanies')}</p>
           </li>
           {projectsDisplayed.map((project, index) => {
             return (
@@ -43,7 +45,7 @@ function Projects() {
                   <video className={styles.projects__video} autoPlay muted loop>
                     <source src={project.webm} type="video/webm" />
                     <source src={project.mp4} type="video/mp4" />
-                    Ваш браузер не поддерживает встроенные видео
+                    {t('components.projects.yourBrowserDoesnotSupportEmbeddedVideos')}
                   </video>
                 </div>
               </li>
@@ -51,7 +53,7 @@ function Projects() {
           })}
           <li className={styles.projects__arrow}>
             <button className={styles.projects__arrow_button} type="button" onClick={handleClick}>
-              {width > 460 ? <img className={styles.projects__arrow_image} src={arrowButton}></img> : <p className={styles.projects__loadmore}>Загрузить ещё</p>}
+              {width > 460 ? <img className={styles.projects__arrow_image} src={arrowButton}></img> : <p className={styles.projects__loadmore}>{t('components.projects.loadMore')}</p>}
             </button>
           </li>
         </ul>

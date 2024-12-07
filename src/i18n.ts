@@ -55,6 +55,12 @@ i18n
               and: 'и',
               policy2: 'политику конфиденциальности',
             },
+            projects: {
+              completedProjects: 'Реализованные проекты',
+              projectsWithBigCompanies: 'проектов с крупными заказчиками',
+              yourBrowserDoesnotSupportEmbeddedVideos: 'Ваш браузер не поддерживает встроенные видео',
+              loadMore: 'Загрузить ещё',
+            },
             footer: {
               allRightsReserved: 'Все права защищены',
             },
@@ -103,6 +109,12 @@ i18n
               policy1: 'terms and conditions',
               and: 'and',
               policy2: 'privacy policy',
+            },
+            projects: {
+              completedProjects: 'Projects completed',
+              projectsWithBigCompanies: 'projects with big companies',
+              yourBrowserDoesnotSupportEmbeddedVideos: 'Your browser does not support embedded videos',
+              loadMore: 'Load more',
             },
             footer: {
               allRightsReserved: 'All rights reserved',
