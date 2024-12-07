@@ -35,11 +35,13 @@ function Projects() {
             return (
               <li className={styles.projects__project} key={`${project.id} - ${index}`}>
                 <h5 className={styles.projects__project_title}>{project.title}</h5>
-                <video className={styles.projects__video} autoPlay muted loop>
-                  <source src={project.webm} type="video/webm" />
-                  <source src={project.mp4} type="video/mp4" />
-                  Ваш браузер не поддерживает встроенные видео
-                </video>
+                <div className={styles.projects__video_container}>
+                  <video className={styles.projects__video} autoPlay muted loop>
+                    <source src={project.webm} type="video/webm" />
+                    <source src={project.mp4} type="video/mp4" />
+                    Ваш браузер не поддерживает встроенные видео
+                  </video>
+                </div>
               </li>
             );
           })}
