@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './Team.module.scss';
 import GridItem from './GridItem/GridItem';
 import { useTeam } from '../../utils/hooks/useTeam';
+import { useInView } from 'motion/react';
 
 const Team: React.FC = () => {
   const { t } = useTranslation();
-  const team = useTeam('RU');
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const team = useTeam('RU', isInView);
 
   return (
-    <div className={styles['team']}>
+    <div ref={ref} className={styles['team']}>
       <div className={styles['team-grid']}>
         <GridItem type="custom" gridArea="title" customContent={<h2 className={styles['team-title']}>{t('components.team.title')}</h2>} />
         <GridItem gridArea="item2" />
