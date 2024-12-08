@@ -34,6 +34,7 @@ i18n
             },
             advantages: {
               title: 'НАШИ ПРЕИМУЩЕСТВА',
+            },
             metrics: {
               title: 'МЕТРИКИ',
             },
@@ -94,6 +95,7 @@ i18n
             },
             advantages: {
               title: 'OUR ADVANTAGES',
+            },
             metrics: {
               title: 'METRICS',
             },
