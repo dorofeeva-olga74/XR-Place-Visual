@@ -29,10 +29,10 @@ const Header: React.FC<HeaderProps> = ({ windowWidth }) => {
             <LangButton />
           </>
         ) : (
-          <LangButton OpenPopup={handleMenuOpen} />
+          !isMenuOpen && <LangButton OpenPopup={handleMenuOpen} windowWidth={windowWidth} isMenuOpen={isMenuOpen} />
         )}
       </header>
-      {isMenuOpen && <PopUp ClosePopUp={handleMenuOpen} />}
+      {isMenuOpen && <PopUp ClosePopUp={handleMenuOpen} windowWidth={windowWidth} isMenuOpen={isMenuOpen} />}
     </>
   );
 };

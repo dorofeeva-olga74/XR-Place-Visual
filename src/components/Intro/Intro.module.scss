@@ -30,7 +30,6 @@
     @media (width < 768px) {
       max-width: 360px;
       margin-left: -20px;
-      margin-top: -32px;
     }
   }
 
@@ -46,6 +45,16 @@
       z-index: 2;
     }
 
+    @media (width < 768px) {
+      width: 320px;
+      flex-direction: column-reverse;
+      gap: 276px;
+      background-color: transparent;
+      position: absolute;
+      bottom: 32px;
+      z-index: 2;
+    }
+
     .intro-text-leftbox {
       padding-top: 20px;
       width: 444px;
@@ -58,6 +67,11 @@
         width: 329px;
       }
 
+      @media (width < 768px) {
+        width: 320px;
+        gap: 24px;
+      }
+
       .intro-text-leftbox-text {
         padding-right: 66px;
 
@@ -67,6 +81,10 @@
 
         @media (width < 1440px) {
           padding-right: 0;
+        }
+
+        @media (width < 768px) {
+          @include mobile-m;
         }
       }
     }
@@ -80,6 +98,10 @@
       @media (width < 1440px) {
         width: 285px;
         justify-content: start;
+      }
+
+      @media (width < 768px) {
+        width: 320px;
       }
 
       .intro-text-rightbox-h1 {
@@ -105,6 +127,10 @@
         @include text-text-m;
 
         color: $white-txt;
+
+        @media (width < 768px) {
+          @include mobile-m;
+        }
       }
     }
   }

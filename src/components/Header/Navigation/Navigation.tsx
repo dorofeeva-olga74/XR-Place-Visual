@@ -16,7 +16,7 @@ interface NavigationProps {
 const Navigation: React.FC<NavigationProps> = ({ className }) => {
   return (
     <nav>
-      <ul className={`${styles['navigation-list']} ${className}}`}>
+      <ul className={`${styles['navigation-list']} ${className}`}>
         {menuListItem.map((item) => (
           <li className={styles['navigation-list-item']} key={item.id}>
             <a className={styles['navigation-list-item-link']} href={item.href}>

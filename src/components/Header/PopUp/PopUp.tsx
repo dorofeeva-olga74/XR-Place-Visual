@@ -5,9 +5,11 @@ import Logo from '../../../vendor/images/logo1.svg';
 
 interface PopUpProps {
   ClosePopUp: () => void;
+  isMenuOpen?: boolean;
+  windowWidth?: number;
 }
 
-const PopUp: React.FC<PopUpProps> = ({ ClosePopUp }) => {
+const PopUp: React.FC<PopUpProps> = ({ ClosePopUp, isMenuOpen, windowWidth }) => {
   return (
     <div className={styles['popup']}>
       <div className={styles['popup-header']}>
@@ -17,7 +19,7 @@ const PopUp: React.FC<PopUpProps> = ({ ClosePopUp }) => {
         </div>
         <button className={styles['popup-button']} onClick={ClosePopUp}></button>
       </div>
-      <LangButton className={styles['popup-langbutton']} />
+      <LangButton className={styles['popup-langbutton']} windowWidth={windowWidth} isMenuOpen={isMenuOpen} />
       <Navigation className={styles['popup-navigation']} />
     </div>
   );
