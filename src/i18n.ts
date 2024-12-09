@@ -32,6 +32,9 @@ i18n
                 items: ['Виджет легко встраивается в любой сайт', 'Доступно с любого устройства', 'Интерактивное вовлечение покупателей', 'Точный вид из окна для каждой планировки', 'Свобода перемещения как в компьютерной игре'],
               },
             },
+            advantages: {
+              title: 'НАШИ ПРЕИМУЩЕСТВА',
+            },
             metrics: {
               title: 'МЕТРИКИ',
             },
@@ -89,6 +92,9 @@ i18n
               list: {
                 items: ['Widget easily integrates into any site', 'Available on any device', 'Interactive customer engagement', 'Accurate window view for each layout', 'Freedom of movement like in a computer game'],
               },
+            },
+            advantages: {
+              title: 'OUR ADVANTAGES',
             },
             metrics: {
               title: 'METRICS',
