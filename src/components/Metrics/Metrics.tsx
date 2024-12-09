@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useMetrics } from '../../utils/hooks/useMetrics';
 import { useTranslation } from 'react-i18next';
 import styles from './Metrics.module.scss';
+import { useInView } from 'motion/react';
 
 const Metrics: React.FC = () => {
   const { t } = useTranslation();
-  const metrics = useMetrics('RU');
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const metrics = useMetrics('RU', isInView);
 
   return (
-    <div className={styles['metrics']}>
+    <div ref={ref} className={styles['metrics']}>
       <h2 className={styles['metrics-title']}>{t('components.metrics.title')}</h2>
       <div className={styles['metrics-details']}>
         {metrics.isSuccess &&
