@@ -18,16 +18,6 @@ i18n
             header: {
               advantages: 'Преимущества',
             },
-            team: {
-              title: 'КТО МЫ?',
-              imageAlt: 'Фотография',
-              missionTitle5: 'МИССИЯ',
-              missionSubtitle5: 'НАША',
-              missionText5: 'Увеличить продажи недвижимости нашим клиентам с помощью инновационных 3D web технологий',
-              valuesTitle9: 'ЦЕННОСТИ',
-              valuesSubtitle9: 'НАШИ',
-              valuesText9: 'Честность, открытость, доверие, уважение, порядочность, взаимовыручка — такие ценности помогают выстроить хорошую атмосферу в команде',
-            },
             widget: {
               featuresWidgetSection: {
                 title: '3D-ВИДЖЕТ',
@@ -45,6 +35,19 @@ i18n
             advantages: {
               title: 'НАШИ ПРЕИМУЩЕСТВА',
             },
+            metrics: {
+              title: 'МЕТРИКИ',
+            },
+            team: {
+              title: 'КТО МЫ?',
+              imageAlt: 'Фотография ',
+              missionTitle5: 'МИССИЯ',
+              missionSubtitle5: 'НАША',
+              missionText5: 'Увеличение продаж недвижимости для наших клиентов с использованием инновационных 3D веб-технологий',
+              valuesTitle9: 'ЦЕННОСТИ',
+              valuesSubtitle9: 'НАШИ',
+              valuesText9: 'Честность, открытость, доверие, уважение, целостность, взаимопомощь — эти ценности помогают создать хорошую атмосферу в команде.',
+            },
             claim: {
               title: 'НАЗНАЧИТЬ ДЕМО',
               username: 'Имя*',
@@ -58,6 +61,12 @@ i18n
               and: 'и',
               policy2: 'политику конфиденциальности',
             },
+            projects: {
+              completedProjects: 'Реализованные проекты',
+              projectsWithBigCompanies: 'проектов с крупными заказчиками',
+              yourBrowserDoesnotSupportEmbeddedVideos: 'Ваш браузер не поддерживает встроенные видео',
+              loadMore: 'Загрузить ещё',
+            },
             footer: {
               allRightsReserved: 'Все права защищены',
             },
@@ -69,16 +78,6 @@ i18n
           components: {
             header: {
               advantages: 'Advantages',
-            },
-            team: {
-              title: 'WHO ARE WE?',
-              imageAlt: 'Photo',
-              missionTitle5: 'MISSION',
-              missionSubtitle5: 'OUR',
-              missionText5: 'Increase real estate sales for our clients using innovative 3D web technologies',
-              valuesTitle9: 'VALUES',
-              valuesSubtitle9: 'OUR',
-              valuesText9: 'Honesty, openness, trust, respect, integrity, mutual assistance—these values help to build a good atmosphere in the team.',
             },
             widget: {
               featuresWidgetSection: {
@@ -97,6 +96,19 @@ i18n
             advantages: {
               title: 'OUR ADVANTAGES',
             },
+            metrics: {
+              title: 'METRICS',
+            },
+            team: {
+              title: 'WHO ARE WE?',
+              imageAlt: 'Photo',
+              missionTitle5: 'MISSION',
+              missionSubtitle5: 'OUR',
+              missionText5: 'Increase real estate sales for our clients using innovative 3D web technologies',
+              valuesTitle9: 'VALUES',
+              valuesSubtitle9: 'OUR',
+              valuesText9: 'Honesty, openness, trust, respect, integrity, mutual assistance—these values help to build a good atmosphere in the team.',
+            },
             claim: {
               title: 'BOOK A DEMO',
               username: 'Name*',
@@ -109,6 +121,12 @@ i18n
               policy1: 'terms and conditions',
               and: 'and',
               policy2: 'privacy policy',
+            },
+            projects: {
+              completedProjects: 'Projects completed',
+              projectsWithBigCompanies: 'projects with big companies',
+              yourBrowserDoesnotSupportEmbeddedVideos: 'Your browser does not support embedded videos',
+              loadMore: 'Load more',
             },
             footer: {
               allRightsReserved: 'All rights reserved',
