@@ -1,0 +1,160 @@
+@use '../../styles/globals';
+
+.advantages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 60px;
+  color: globals.$white-txt;
+
+  &__title {
+    width: 100%;
+    margin-bottom: 100px;
+
+    @include globals.text-h2;
+
+    @media (width <= 850px) {
+      font-size: 50px;
+    }
+
+    @media (width <= 768px) {
+      margin-bottom: 40px;
+
+      @include globals.mobile-h2;
+    }
+  }
+
+  &__details {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+
+    @media (width <= 1260px) {
+      flex-direction: column;
+      gap: 14px;
+    }
+  }
+
+  @keyframes border-shimmer {
+    0% {
+      border: 1px solid transparent;
+    }
+
+    20% {
+      border-left: 1px solid transparent;
+      border-top: 2px solid globals.$grey-border;
+      border-right: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+    }
+
+    40% {
+      border-left: 1px solid transparent;
+      border-top: 1px solid globals.$grey-border;
+      border-right: 2px solid globals.$grey-border;
+      border-bottom: 1px solid transparent;
+    }
+
+    60% {
+      border-left: 1px solid transparent;
+      border-top: 1px solid globals.$grey-border;
+      border-right: 1px solid globals.$grey-border;
+      border-bottom: 2px solid globals.$grey-border;
+    }
+
+    70% {
+      border-left: 2px solid globals.$grey-border;
+      border-top: 1px solid globals.$grey-border;
+      border-right: 1px solid globals.$grey-border;
+      border-bottom: 1px solid globals.$grey-border;
+    }
+
+    85% {
+      border: 1px solid globals.$grey-border;
+    }
+
+    100% {
+      border: 1px solid globals.$grey-border;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 32px 40px 48px;
+    gap: 28px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    position: relative;
+    animation: border-shimmer 6s infinite;
+
+    &:hover {
+      background: radial-gradient(ellipse closest-side at center, #066c70 0%, #012426 100%);
+    }
+
+    @media (width <= 1260px) {
+      padding: 20px 20px 28px;
+      gap: 18px;
+    }
+  }
+
+  &__circleContainer {
+    position: relative;
+    width: 100%;
+    height: 80px;
+  }
+
+  &__circle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid globals.$grey-border;
+  }
+
+  &__circleSecond {
+    left: 40px;
+  }
+
+  &__circleThird {
+    left: 80px;
+  }
+
+  &__cardTitle {
+    min-height: 4.5em;
+    text-transform: uppercase;
+
+    @include globals.text-subheader-m;
+
+    @media (width <= 1260px) {
+      font-size: 22px;
+      min-height: auto;
+    }
+  }
+
+  &__textSet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  &__text {
+    width: calc(100% - 20px);
+    margin-left: 20px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    @include globals.text-text-m;
+
+    @media (width <= 1260px) {
+      @include globals.mobile-m;
+    }
+  }
+
+  @media (width <= 1260px) {
+    padding-bottom: 0;
+  }
+}
