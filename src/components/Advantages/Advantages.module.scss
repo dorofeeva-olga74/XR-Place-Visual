@@ -8,7 +8,7 @@
   padding-bottom: 60px;
   color: globals.$white-txt;
 
-  .advantages__title {
+  &__title {
     width: 100%;
     margin-bottom: 100px;
 
@@ -25,7 +25,7 @@
     }
   }
 
-  .advantages__details {
+  &__details {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -79,7 +79,7 @@
     }
   }
 
-  .advantages__card {
+  &__card {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -98,59 +98,59 @@
       padding: 20px 20px 28px;
       gap: 18px;
     }
+  }
 
-    .advantages__circle-container {
-      position: relative;
-      width: 100%;
-      height: 80px;
+  &__circleContainer {
+    position: relative;
+    width: 100%;
+    height: 80px;
+  }
 
-      .advantages__circle {
-        position: absolute;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        border: 1px solid globals.$grey-border;
-      }
+  &__circle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid globals.$grey-border;
+  }
 
-      .advantages__circle-second {
-        left: 40px;
-      }
+  &__circleSecond {
+    left: 40px;
+  }
 
-      .advantages__circle-third {
-        left: 80px;
-      }
+  &__circleThird {
+    left: 80px;
+  }
+
+  &__cardTitle {
+    min-height: 4.5em;
+    text-transform: uppercase;
+
+    @include globals.text-subheader-m;
+
+    @media (width <= 1260px) {
+      font-size: 22px;
+      min-height: auto;
     }
+  }
 
-    .advantages__card-title {
-      min-height: 4.5em;
-      text-transform: uppercase;
+  &__textSet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+  }
 
-      @include globals.text-subheader-m;
+  &__text {
+    width: calc(100% - 20px);
+    margin-left: 20px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 
-      @media (width <= 1260px) {
-        font-size: 22px;
-        min-height: auto;
-      }
-    }
+    @include globals.text-text-m;
 
-    .advantages__text-set {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 14px;
-
-      .advantages__text {
-        width: calc(100% - 20px);
-        margin-left: 20px;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-
-        @include globals.text-text-m;
-
-        @media (width <= 1260px) {
-          @include globals.mobile-m;
-        }
-      }
+    @media (width <= 1260px) {
+      @include globals.mobile-m;
     }
   }
 
