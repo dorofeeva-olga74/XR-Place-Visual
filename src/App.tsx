@@ -5,6 +5,7 @@ import Advantages from './components/Advantages/Advantages';
 import Metrics from './components/Metrics/Metrics';
 import Team from './components/Team/Team';
 import Projects from './components/Projects/Projects';
+import Schema from './components/Schema/Schema';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Advantages />
         <Projects />
         <Metrics />
+        <Schema />
         <Team />
         <Claim />
       </Layout>
