@@ -133,6 +133,11 @@ i18n
               yourBrowserDoesnotSupportEmbeddedVideos: 'Your browser does not support embedded videos',
               loadMore: 'Load more',
             },
+            schema: {
+              title: 'HOW IT WORKS',
+              description: 'you are guaranteed high quality, attention to detail and compliance with deadlines',
+              descriptionSpan: 'With us ',
+            },
             footer: {
               allRightsReserved: 'All rights reserved',
             },
