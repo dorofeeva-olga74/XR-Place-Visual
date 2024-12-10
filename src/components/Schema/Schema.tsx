@@ -3,24 +3,26 @@ import image from './../../vendor/images/Schema.png';
 import { useSchema } from '../../utils/hooks/useSchema';
 import { SchemaStage } from '../../utils/api/apiTypes';
 import useWindowWidth from '../../utils/hooks/useWindowWidth';
+import { useTranslation } from 'react-i18next';
 
 function Description() {
+  const { t } = useTranslation();
   return (
     <p className={styles.schema__description}>
-      <span className={styles.schema__description_span}>Выбирая нас, </span>
-      вы получаете гарантию качества, внимание к деталям и соблюдение сроков
+      <span className={styles.schema__description_span}>{t('components.schema.descriptionSpan')}</span>
+      {t('components.schema.description')}
     </p>
   );
 }
 
 function Schema() {
+  const { t } = useTranslation();
   const schema = useSchema('RU');
   const { width } = useWindowWidth();
-
   return (
     <section className={styles.schema__container}>
       <div className={styles.schema__overview}>
-        <h2 className={styles.schema__title}>СХЕМА РАБОТЫ</h2>
+        <h2 className={styles.schema__title}>{t('components.schema.title')}</h2>
         {width >= 360 && <Description />}
         <div className={styles.schema__image_container}>
           <img className={styles.schema__image} src={image}></img>
