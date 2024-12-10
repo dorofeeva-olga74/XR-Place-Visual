@@ -1,4 +1,4 @@
-@import '../../../styles/globals';
+@use '../../../styles/globals';
 
 .lang-section {
   display: flex;
@@ -12,9 +12,9 @@
   }
 
   .lang-section-link {
-    @include text-text-m;
+    @include globals.text-text-m;
 
-    color: $white-txt;
+    color: globals.$white-txt;
     padding: 4px 0;
     text-decoration: none;
   }

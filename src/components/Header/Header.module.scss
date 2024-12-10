@@ -1,31 +1,30 @@
-@import '../../styles/globals';
+@use '../../styles/globals';
 
 .header {
   padding-top: 20px;
   padding-bottom: 20px;
   position: relative;
   margin: 0 auto;
-  max-width: 1440px;
-  background-color: $black-bg;
-  color: $white-txt;
+  width: 100%;
+  background-color: globals.$black-bg;
+  color: globals.$white-txt;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   @media (width < 1440px) {
-    width: 700px;
     background-color: transparent;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 2;
+    padding: 0 68px;
   }
 
   @media (width < 768px) {
     padding-top: 32px;
     padding-bottom: 8px;
-    width: 320px;
     background-color: transparent;
     position: absolute;
     top: 0;
@@ -44,10 +43,10 @@
     }
 
     .header-logo-text {
-      @include text-subheader-s;
+      @include globals.text-subheader-s;
 
       @media (width < 1440px) {
-        @include mobile-h1;
+        @include globals.mobile-h1;
       }
     }
   }

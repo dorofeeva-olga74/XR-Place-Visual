@@ -10,7 +10,7 @@ interface LangButtonProps {
 
 const LangButton: React.FC<LangButtonProps> = ({ OpenPopup, className, isMenuOpen, windowWidth }) => {
   return (
-    <div className={`${styles['lang-section']} ${className}`}>
+    <div className={`${styles['lang-section']} ${className ? className : ''}`}>
       {(isMenuOpen || (windowWidth && windowWidth > 768)) && (
         <>
           <a className={styles['lang-section-link']} href="#">

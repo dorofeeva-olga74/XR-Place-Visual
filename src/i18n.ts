@@ -16,7 +16,12 @@ i18n
         translation: {
           components: {
             header: {
+              widget: '3D-виджет',
               advantages: 'Преимущества',
+              project: 'Реализованные проекты',
+              metrics: 'Метрики',
+              process: 'Процесс работы',
+              about: 'О нас',
             },
             widget: {
               featuresWidgetSection: {

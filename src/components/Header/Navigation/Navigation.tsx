@@ -1,19 +1,22 @@
 import styles from './Navigation.module.scss';
-
-const menuListItem = [
-  { id: 1, name: '3D-виджет', href: '#' },
-  { id: 2, name: 'Преимущества', href: '#' },
-  { id: 3, name: 'Реализованные проекты', href: '#' },
-  { id: 4, name: 'Метрики', href: '#' },
-  { id: 5, name: 'Процесс работы', href: '#' },
-  { id: 6, name: 'О нас', href: '#' },
-];
+import { useTranslation } from 'react-i18next';
 
 interface NavigationProps {
   className?: string;
 }
 
 const Navigation: React.FC<NavigationProps> = ({ className }) => {
+  const { t } = useTranslation();
+
+  const menuListItem = [
+    { id: 1, name: t('components.header.widget'), href: '#' },
+    { id: 2, name: t('components.header.advantages'), href: '#' },
+    { id: 3, name: t('components.header.project'), href: '#' },
+    { id: 4, name: t('components.header.metrics'), href: '#' },
+    { id: 5, name: t('components.header.process'), href: '#' },
+    { id: 6, name: t('components.header.about'), href: '#' },
+  ];
+
   return (
     <nav>
       <ul className={`${styles['navigation-list']} ${className}`}>

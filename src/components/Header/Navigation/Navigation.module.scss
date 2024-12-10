@@ -1,4 +1,4 @@
-@import '../../../styles/globals';
+@use '../../../styles/globals';
 
 .navigation-list {
   display: flex;
@@ -11,10 +11,10 @@
     list-style: none;
 
     .navigation-list-item-link {
-      @include text-text-m;
-
-      color: $white-txt;
+      color: globals.$white-txt;
       text-decoration: none;
+
+      @include globals.text-text-m;
 
       @media (width < 1044px) {
         text-decoration: underline;

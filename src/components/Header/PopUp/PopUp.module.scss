@@ -1,10 +1,11 @@
-@import '../../../styles/globals';
+@use '../../../styles/globals';
 
 .popup {
   padding-top: 32px;
-  margin-left: -34px;
-  width: 768px;
-  background-color: $black-bg;
+  padding-left: -34px;
+  margin-left: auto;
+  width: auto;
+  background-color: globals.$black-bg;
   position: absolute;
   inset: 0;
   height: 100vh;
@@ -16,8 +17,7 @@
   gap: 40px;
 
   @media (width < 768px) {
-    width: 360px;
-    margin-left: -20px;
+    padding-left: -20px;
   }
 
   .popup-header {
@@ -33,10 +33,10 @@
       gap: 8px;
 
       .popup-logo-text {
-        @include mobile-h1;
-
         text-decoration: none;
-        color: $white-txt;
+        color: globals.$white-txt;
+
+        @include globals.mobile-h1;
       }
     }
 
@@ -62,11 +62,11 @@
   padding: 0 20px;
 
   .lang-section-link {
-    @include text-text-m;
-
-    color: $white-txt;
+    color: globals.$white-txt;
     padding: 4px 0;
     text-decoration: none;
+
+    @include globals.text-text-m;
   }
 }
 
