@@ -1,16 +1,19 @@
 import { useProjects } from '../../utils/hooks/useProjects';
 import styles from './Projects.module.scss';
 import arrowButton from './../../vendor/images/arrow-button.svg';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import useWindowWidth from '../../utils/hooks/useWindowWidth';
 import { useTranslation } from 'react-i18next';
+import { useInView } from 'motion/react';
 
 function Projects() {
   const { width } = useWindowWidth();
   const [index, setIndex] = useState(0);
   const [projectsDisplayed, setProjectsDisplayed] = useState([]);
   const { t } = useTranslation();
-  const data = useProjects('RU');
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const data = useProjects('RU', isInView);
   // artificially make projects array longer to demonstrate 'load more' button click effect
   const projects = useMemo(() => (data.isSuccess ? data.data.concat(data.data) : []), [data.isSuccess, data.data]);
   const handleClick = () => {
@@ -30,7 +33,7 @@ function Projects() {
 
   if (projectsDisplayed)
     return (
-      <div className={styles.projects}>
+      <div ref={ref} className={styles.projects}>
         <h2 className={styles.projects__title}>{t('components.projects.completedProjects')}</h2>
         <ul className={styles.projects__grid}>
           <li className={styles.projects__description}>

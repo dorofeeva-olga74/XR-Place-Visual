@@ -17,9 +17,9 @@
   }
 
   .list-item {
+    position: relative;
     margin: 0;
     counter-increment: list-counter;
-    border-bottom: 1px solid globals.$grey-border;
     padding: 1rem 0;
 
     &:first-child {
@@ -51,4 +51,14 @@
       }
     }
   }
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: globals.$grey-border;
+  transform-origin: 0%;
 }
