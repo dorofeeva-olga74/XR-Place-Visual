@@ -43,6 +43,9 @@ i18n
                 items: ['Виджет легко встраивается в любой сайт', 'Доступно с любого устройства', 'Интерактивное вовлечение покупателей', 'Точный вид из окна для каждой планировки', 'Свобода перемещения как в компьютерной игре'],
               },
             },
+            advantages: {
+              title: 'НАШИ ПРЕИМУЩЕСТВА',
+            },
             metrics: {
               title: 'МЕТРИКИ',
             },
@@ -70,10 +73,15 @@ i18n
               policy2: 'политику конфиденциальности',
             },
             projects: {
-              completedProjects: 'Реализованные проекты',
+              completedProjects: 'РЕАЛИЗОВАННЫЕ ПРОЕКТЫ',
               projectsWithBigCompanies: 'проектов с крупными заказчиками',
               yourBrowserDoesnotSupportEmbeddedVideos: 'Ваш браузер не поддерживает встроенные видео',
               loadMore: 'Загрузить ещё',
+            },
+            schema: {
+              title: 'СХЕМА РАБОТЫ',
+              description: 'вы получаете гарантию качества, внимание к деталям и соблюдение сроков',
+              descriptionSpan: 'Выбирая нас, ',
             },
             footer: {
               allRightsReserved: 'Все права защищены',
@@ -112,6 +120,9 @@ i18n
                 items: ['Widget easily integrates into any site', 'Available on any device', 'Interactive customer engagement', 'Accurate window view for each layout', 'Freedom of movement like in a computer game'],
               },
             },
+            advantages: {
+              title: 'OUR ADVANTAGES',
+            },
             metrics: {
               title: 'METRICS',
             },
@@ -139,7 +150,7 @@ i18n
               policy2: 'privacy policy',
             },
             projects: {
-              completedProjects: 'Projects completed',
+              completedProjects: 'PROJECTS COMPLETED',
               projectsWithBigCompanies: 'projects with big companies',
               yourBrowserDoesnotSupportEmbeddedVideos: 'Your browser does not support embedded videos',
               loadMore: 'Load more',
