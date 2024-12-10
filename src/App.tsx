@@ -6,12 +6,16 @@ import Metrics from './components/Metrics/Metrics';
 import Team from './components/Team/Team';
 import Projects from './components/Projects/Projects';
 import Footer from './components/Footer/Footer';
+import Intro from './components/Intro/Intro';
+import Header from './components/Header/Header';
 import Schema from './components/Schema/Schema';
 
 function App() {
   return (
     <>
       <Layout>
+        <Header />
+        <Intro />
         <Widget />
         <Advantages />
         <Projects />
