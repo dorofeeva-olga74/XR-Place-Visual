@@ -67,6 +67,11 @@ i18n
               yourBrowserDoesnotSupportEmbeddedVideos: 'Ваш браузер не поддерживает встроенные видео',
               loadMore: 'Загрузить ещё',
             },
+            schema: {
+              title: 'СХЕМА РАБОТЫ',
+              description: 'вы получаете гарантию качества, внимание к деталям и соблюдение сроков',
+              descriptionSpan: 'Выбирая нас, ',
+            },
             footer: {
               allRightsReserved: 'Все права защищены',
             },
