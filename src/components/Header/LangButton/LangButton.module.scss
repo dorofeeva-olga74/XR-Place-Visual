@@ -12,11 +12,11 @@
   }
 
   .lang-section-link {
-    @include globals.text-text-m;
-
     color: globals.$white-txt;
     padding: 4px 0;
     text-decoration: none;
+
+    @include globals.text-text-m;
   }
 
   .menu-button {

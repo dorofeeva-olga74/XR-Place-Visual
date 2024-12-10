@@ -22,6 +22,12 @@ i18n
               metrics: 'Метрики',
               process: 'Процесс работы',
               about: 'О нас',
+              logotip: 'Логотип',
+            },
+            intro: {
+              leftboxtext: 'Увеличьте продажи, используя новейшие 3D технологии для сайтов строительных компаний',
+              rightboxtext: 'Новый уровень визуализации недвижимости',
+              background: 'Трёхмерный виджет',
             },
             widget: {
               featuresWidgetSection: {
@@ -79,7 +85,18 @@ i18n
         translation: {
           components: {
             header: {
+              widget: '3D-widget',
               advantages: 'Advantages',
+              project: 'Completed projects',
+              metrics: 'Metrics',
+              process: 'Work process',
+              about: 'About us',
+              logotip: 'Logo',
+            },
+            intro: {
+              leftboxtext: 'Increase sales by using the latest 3D technologies for construction companies websites',
+              rightboxtext: 'A new level of real estate visualization',
+              background: 'Three-dimensional widget',
             },
             widget: {
               featuresWidgetSection: {

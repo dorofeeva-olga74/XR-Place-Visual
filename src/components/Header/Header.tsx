@@ -5,9 +5,11 @@ import Logo from '../../vendor/images/logo1.svg';
 import { useState } from 'react';
 import PopUp from './PopUp/PopUp';
 import useWindowWidth from '../../utils/hooks/useWindowWidth';
+import { useTranslation } from 'react-i18next';
 
 export default function Header() {
   const { width } = useWindowWidth();
+  const { t } = useTranslation();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -19,7 +21,7 @@ export default function Header() {
     <>
       <header className={styles['header']}>
         <div className={styles['header-logo-section']}>
-          <img className={styles['header-logo-image']} src={Logo} alt="Логотип" />
+          <img className={styles['header-logo-image']} src={Logo} alt={t('components.header.logotip')} />
           <p className={styles['header-logo-text']}>XR PLACE</p>
         </div>
         {width >= 1440 ? (
