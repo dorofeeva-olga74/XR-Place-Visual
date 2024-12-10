@@ -1,0 +1,133 @@
+@use '../../styles/globals';
+
+.footer {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    'logoText logoText descriptionText descriptionText'
+    'logoTitle logoTitle socialBox socialBox'
+    'address address address address';
+  grid-auto-columns: minmax(auto, 1fr);
+  padding: 40px 0;
+  color: globals.$white-txt;
+  border-top: 2px solid globals.$dark-grey-border;
+
+  &__logoImg {
+    display: none;
+
+    @media (width <= 600px) {
+      display: block;
+    }
+  }
+
+  &__logoSet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    grid-area: logo;
+    height: auto;
+  }
+
+  &__logoTitle {
+    margin: 0;
+    padding: 20px 0 0;
+
+    @include globals.desktop-h1;
+
+    @media (width <= 768px) {
+      font-size: 64px;
+    }
+
+    @media (width <= 600px) {
+      padding: 0;
+
+      @include globals.mobile-h1;
+    }
+  }
+
+  &__descriptionText {
+    padding-left: 10px;
+    text-align: end;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1;
+
+    @media (width <= 768px) {
+      @include globals.text-text-m;
+    }
+
+    @media (width <= 600px) {
+      text-align: start;
+      padding-left: 0;
+
+      @include globals.mobile-m;
+    }
+  }
+
+  &__socialBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+
+    @media (width <= 600px) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__addressSet {
+    grid-area: address;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    @media (width <= 790px) {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    @media (width <= 600px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__address {
+    @include globals.text-text-xs;
+
+    @media (width <= 600px) {
+      color: globals.$grey-border;
+
+      @include globals.mobile-m;
+    }
+  }
+
+  @media (width <= 1160px) {
+    padding: 40px 0 20px;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      'logoText descriptionText descriptionText descriptionText'
+      'logoTitle logoTitle logoTitle logoTitle'
+      'socialBox socialBox socialBox socialBox'
+      'address address address address'
+      'address address address address';
+    grid-auto-columns: minmax(auto, 1fr);
+  }
+
+  @media (width <= 600px) {
+    grid-template-areas:
+      'logoImg logoTitle'
+      'descriptionText descriptionText'
+      'logoText logoText'
+      'socialBox socialBox'
+      'address address';
+    grid-auto-columns: 20% 80%;
+    gap: 20px 0;
+  }
+}
