@@ -14,6 +14,7 @@
 
   &__logoImg {
     display: none;
+    grid-area: logoImg;
 
     @media (width <= 600px) {
       display: block;
@@ -21,17 +22,18 @@
   }
 
   &__logoSet {
+    grid-area: logoText;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 0;
-    grid-area: logo;
     height: auto;
   }
 
   &__logoTitle {
     margin: 0;
     padding: 20px 0 0;
+    grid-area: logoTitle;
 
     @include globals.desktop-h1;
 
@@ -52,6 +54,7 @@
     font-size: 28px;
     font-weight: 300;
     line-height: 1;
+    grid-area: descriptionText;
 
     @media (width <= 768px) {
       @include globals.text-text-m;
@@ -73,6 +76,7 @@
     margin: 0;
     padding: 0;
     gap: 20px;
+    grid-area: socialBox;
 
     @media (width <= 600px) {
       justify-content: flex-start;
@@ -80,12 +84,12 @@
   }
 
   &__addressSet {
-    grid-area: address;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
     gap: 16px;
+    grid-area: address;
 
     @media (width <= 790px) {
       flex-wrap: wrap;

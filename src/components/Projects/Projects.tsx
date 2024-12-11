@@ -33,7 +33,7 @@ function Projects() {
 
   if (projectsDisplayed)
     return (
-      <div ref={ref} className={styles.projects}>
+      <section ref={ref} className={styles.projects}>
         <h2 className={styles.projects__title}>{t('components.projects.completedProjects')}</h2>
         <ul className={styles.projects__grid}>
           <li className={styles.projects__description}>
@@ -60,7 +60,7 @@ function Projects() {
             </button>
           </li>
         </ul>
-      </div>
+      </section>
     );
 }
 

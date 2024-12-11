@@ -16,7 +16,7 @@
     @include globals.text-text-xs;
 
     @media (width <= 600px) {
-      text-decoration: underline;
+      border-bottom: 1px solid globals.$light-grey-border;
 
       @include globals.mobile-m;
     }
@@ -29,7 +29,7 @@
     @include globals.text-text-m;
 
     @media (width <= 600px) {
-      text-decoration: underline;
+      border-bottom: 1px solid globals.$light-grey-border;
 
       @include globals.mobile-m;
     }

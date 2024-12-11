@@ -136,7 +136,7 @@ i18n
               logoAlt: 'Company logo',
               description: 'Create  a new image of real estate in digital',
               conditions: 'Terms of use',
-              confidentiality: 'Privasy Policy',
+              confidentiality: 'Privaсy Policy',
               allRightsReserved: 'All rights reserved',
             },
           },
