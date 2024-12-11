@@ -84,6 +84,10 @@ i18n
               descriptionSpan: 'Выбирая нас, ',
             },
             footer: {
+              logoAlt: 'Логотип компании',
+              description: 'Создайте новый образ недвижимости в digital',
+              conditions: 'Условия использования',
+              confidentiality: 'Политика конфиденциальности',
               allRightsReserved: 'Все права защищены',
             },
           },
@@ -161,6 +165,10 @@ i18n
               descriptionSpan: 'With us ',
             },
             footer: {
+              logoAlt: 'Company logo',
+              description: 'Create  a new image of real estate in digital',
+              conditions: 'Terms of use',
+              confidentiality: 'Privaсy Policy',
               allRightsReserved: 'All rights reserved',
             },
           },

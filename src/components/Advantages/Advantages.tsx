@@ -12,7 +12,7 @@ const Advantages: React.FC = () => {
   }
 
   return (
-    <div className={styles.advantages}>
+    <section className={styles.advantages}>
       <h2 className={styles.advantages__title}>{t('components.advantages.title')}</h2>
       <div className={styles.advantages__details}>
         {advantages.isSuccess &&
@@ -32,7 +32,7 @@ const Advantages: React.FC = () => {
             );
           })}
       </div>
-    </div>
+    </section>
   );
 };
 

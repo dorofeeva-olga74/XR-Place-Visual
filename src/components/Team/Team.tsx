@@ -12,7 +12,7 @@ const Team: React.FC = () => {
   const team = useTeam('RU', isInView);
 
   return (
-    <div ref={ref} className={styles['team']}>
+    <section ref={ref} className={styles['team']}>
       <div className={styles['team-grid']}>
         <GridItem type="custom" gridArea="title" customContent={<h2 className={styles['team-title']}>{t('components.team.title')}</h2>} />
         <GridItem gridArea="item2" />
@@ -49,7 +49,7 @@ const Team: React.FC = () => {
         <GridItem gridArea="item11" />
         <GridItem gridArea="item12" />
       </div>
-    </div>
+    </section>
   );
 };
 
