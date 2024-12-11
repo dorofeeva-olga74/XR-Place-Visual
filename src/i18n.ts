@@ -16,7 +16,18 @@ i18n
         translation: {
           components: {
             header: {
+              widget: '3D-виджет',
               advantages: 'Преимущества',
+              project: 'Реализованные проекты',
+              metrics: 'Метрики',
+              process: 'Процесс работы',
+              about: 'О нас',
+              logotip: 'Логотип',
+            },
+            intro: {
+              leftboxtext: 'Увеличьте продажи, используя новейшие 3D технологии для сайтов строительных компаний',
+              rightboxtext: 'Новый уровень визуализации недвижимости',
+              background: 'Трёхмерный виджет',
             },
             widget: {
               featuresWidgetSection: {
@@ -62,10 +73,15 @@ i18n
               policy2: 'политику конфиденциальности',
             },
             projects: {
-              completedProjects: 'Реализованные проекты',
+              completedProjects: 'РЕАЛИЗОВАННЫЕ ПРОЕКТЫ',
               projectsWithBigCompanies: 'проектов с крупными заказчиками',
               yourBrowserDoesnotSupportEmbeddedVideos: 'Ваш браузер не поддерживает встроенные видео',
               loadMore: 'Загрузить ещё',
+            },
+            schema: {
+              title: 'СХЕМА РАБОТЫ',
+              description: 'вы получаете гарантию качества, внимание к деталям и соблюдение сроков',
+              descriptionSpan: 'Выбирая нас, ',
             },
             footer: {
               logoAlt: 'Логотип компании',
@@ -81,7 +97,18 @@ i18n
         translation: {
           components: {
             header: {
+              widget: '3D-widget',
               advantages: 'Advantages',
+              project: 'Completed projects',
+              metrics: 'Metrics',
+              process: 'Work process',
+              about: 'About us',
+              logotip: 'Logo',
+            },
+            intro: {
+              leftboxtext: 'Increase sales by using the latest 3D technologies for construction companies websites',
+              rightboxtext: 'A new level of real estate visualization',
+              background: 'Three-dimensional widget',
             },
             widget: {
               featuresWidgetSection: {
@@ -127,10 +154,15 @@ i18n
               policy2: 'privacy policy',
             },
             projects: {
-              completedProjects: 'Projects completed',
+              completedProjects: 'PROJECTS COMPLETED',
               projectsWithBigCompanies: 'projects with big companies',
               yourBrowserDoesnotSupportEmbeddedVideos: 'Your browser does not support embedded videos',
               loadMore: 'Load more',
+            },
+            schema: {
+              title: 'HOW IT WORKS',
+              description: 'you are guaranteed high quality, attention to detail and compliance with deadlines',
+              descriptionSpan: 'With us ',
             },
             footer: {
               logoAlt: 'Company logo',
