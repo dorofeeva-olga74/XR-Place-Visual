@@ -10,7 +10,19 @@
   grid-auto-columns: minmax(auto, 1fr);
   padding: 40px 0;
   color: globals.$white-txt;
-  border-top: 2px solid globals.$dark-grey-border;
+  position: relative;
+  border-top: 2px solid transparent;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #080808 -2.44%, #878787 50%, #080808 102.44%);
+    pointer-events: none;
+  }
 
   &__logoImg {
     display: none;
