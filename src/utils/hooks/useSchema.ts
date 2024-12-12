@@ -1,9 +1,9 @@
-import { useQuery } from '@tanstack/react-query';
+import { skipToken, useQuery } from '@tanstack/react-query';
 import { api } from '../api/api';
 
-export const useSchema = (lang: Lang) => {
+export const useSchema = (lang: Lang, enabled: boolean) => {
   return useQuery({
     queryKey: ['schema', lang],
-    queryFn: () => api.getSchema(lang),
+    queryFn: enabled ? () => api.getSchema(lang) : skipToken,
   });
 };
