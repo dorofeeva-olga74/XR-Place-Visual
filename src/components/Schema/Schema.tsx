@@ -4,6 +4,8 @@ import { useSchema } from '../../utils/hooks/useSchema';
 import { SchemaStage } from '../../utils/api/apiTypes';
 import useWindowWidth from '../../utils/hooks/useWindowWidth';
 import { useTranslation } from 'react-i18next';
+import { useRef } from 'react';
+import { useInView } from 'motion/react';
 
 function Description() {
   const { t } = useTranslation();
@@ -17,10 +19,13 @@ function Description() {
 
 function Schema() {
   const { t } = useTranslation();
-  const schema = useSchema('RU');
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const schema = useSchema('RU', isInView);
   const { width } = useWindowWidth();
+
   return (
-    <section className={styles.schema__container}>
+    <section ref={ref} className={styles.schema__container}>
       <div className={styles.schema__overview}>
         <h2 className={styles.schema__title}>{t('components.schema.title')}</h2>
         {width >= 360 && <Description />}
