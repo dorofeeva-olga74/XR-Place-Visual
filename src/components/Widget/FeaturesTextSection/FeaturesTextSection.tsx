@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './FeaturesTextSection.module.scss';
 
@@ -26,10 +26,10 @@ const FeaturesTextSection: React.FC = () => {
   }, []);
 
   return (
-  <div className={styles.shimmerTextSet} ref={ref}>
-     <p className={styles.shimmerText}>
-       {t('components.widget.featuresTextSection.p')}
-       <span className={styles.shimmerSpan}>{t('components.widget.featuresTextSection.span')}</span>
+    <div className={styles.shimmerTextSet} ref={ref}>
+      <p className={styles.shimmerText}>
+        {t('components.widget.featuresTextSection.p')}
+        <span className={styles.shimmerSpan}>{t('components.widget.featuresTextSection.span')}</span>
         {t('components.widget.featuresTextSection.p2')}
       </p>
     </div>

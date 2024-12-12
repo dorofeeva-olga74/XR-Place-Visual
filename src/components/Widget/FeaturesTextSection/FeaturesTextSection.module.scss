@@ -1,14 +1,19 @@
 @use '../../../styles/globals';
 
-.shimmer-text-set {
+.shimmerTextSet {
   display: flex;
   position: relative;
   padding: 0;
   margin: 0;
   width: 100%;
   z-index: 5;
+  transform: translateX(-5%);
+  opacity: 0;
+  transition:
+    opacity 15s,
+    transform 9s;
 
-  .shimmer-text {
+  .shimmerText {
     padding: 76px 0 92px 12%;
     height: auto;
     background-size: 200% auto;
@@ -30,11 +35,37 @@
       padding: 0;
     }
 
-    .shimmer-span {
+    .shimmerSpan {
       color: globals.$main-blue;
       background-size: 200% auto;
       background-clip: text;
-      animation: shimmer 2s linear infinite;
+      animation: shimmer 5s ease-out infinite;
     }
+  }
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity 15s ease-out,
+    transform 13s ease-out;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition:
+    opacity 5s ease-out,
+    transform 3s ease-out;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0%;
   }
 }
