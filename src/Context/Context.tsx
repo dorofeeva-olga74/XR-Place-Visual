@@ -1,22 +1,25 @@
 import { createContext, useState } from 'react';
 import i18n from '../i18n';
 
-export interface ContextType {
-  language: string;
-  handleLangChange: (language: string) => void;
+export interface LanguageContextType {
+  language: 'RU' | 'EN';
+  handleLangChange: (language: 'RU' | 'EN') => void;
 }
 
-const Context = createContext<ContextType | null>(null);
+const ContextProvider = createContext<LanguageContextType>({
+  language: 'RU',
+  handleLangChange: () => {},
+});
 
-const ContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const [language, setLanguage] = useState('ru');
+const LanguageContextProvider = ({ children }: { children: React.ReactNode }) => {
+  const [language, setLanguage] = useState<'RU' | 'EN'>('RU');
 
-  const handleLangChange = (language: string) => {
-    i18n.changeLanguage(language);
-    setLanguage(language);
+  const handleLangChange = (lang: 'RU' | 'EN') => {
+    i18n.changeLanguage(lang.toLowerCase());
+    setLanguage(lang);
   };
 
-  return <Context.Provider value={{ language, handleLangChange }}>{children}</Context.Provider>;
+  return <ContextProvider.Provider value={{ language, handleLangChange }}>{children}</ContextProvider.Provider>;
 };
 
-export { ContextProvider, Context };
+export { LanguageContextProvider, ContextProvider };

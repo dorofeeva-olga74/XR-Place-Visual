@@ -6,7 +6,7 @@ interface LangButtonProps {
   className?: string;
   isMenuOpen?: boolean;
   windowWidth?: number;
-  handleLangChange?: (language: string) => void;
+  handleLangChange?: (language: 'RU' | 'EN') => void;
 }
 
 const LangButton: React.FC<LangButtonProps> = ({ OpenPopup, className, isMenuOpen, windowWidth, handleLangChange }) => {
@@ -14,13 +14,13 @@ const LangButton: React.FC<LangButtonProps> = ({ OpenPopup, className, isMenuOpe
     <div className={`${styles['lang-section']} ${className ? className : ''}`}>
       {(isMenuOpen || (windowWidth && windowWidth > 768)) && (
         <>
-          <a className={styles['lang-section-link']} href="#" onClick={() => handleLangChange && handleLangChange('en')}>
+          <button type="button" className={styles['lang-section-link']} onClick={() => handleLangChange && handleLangChange('EN')}>
             En
-          </a>
+          </button>
           <img src={separator} alt="Разделитель" />
-          <a className={styles['lang-section-link']} href="#" onClick={() => handleLangChange && handleLangChange('ru')}>
+          <button className={styles['lang-section-link']} onClick={() => handleLangChange && handleLangChange('RU')}>
             Рус
-          </a>
+          </button>
         </>
       )}
       {OpenPopup && <button className={styles['menu-button']} onClick={OpenPopup} />}

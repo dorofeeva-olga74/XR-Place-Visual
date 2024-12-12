@@ -5,7 +5,7 @@ import { Lang, SchemaStage } from '../../utils/api/apiTypes';
 import useWindowWidth from '../../utils/hooks/useWindowWidth';
 import { useTranslation } from 'react-i18next';
 import { useContext } from 'react';
-import { Context, ContextType } from '../../Context/Context';
+import { ContextProvider } from '../../Context/Context';
 
 function Description() {
   const { t } = useTranslation();
@@ -18,9 +18,9 @@ function Description() {
 }
 
 function Schema() {
-  const { language } = useContext(Context) as ContextType;
+  const { language } = useContext(ContextProvider);
   const { t } = useTranslation();
-  const schema = useSchema(language.toUpperCase() as Lang);
+  const schema = useSchema(language as Lang);
   const { width } = useWindowWidth();
 
   return (

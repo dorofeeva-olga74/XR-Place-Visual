@@ -28,6 +28,7 @@ i18n
               leftboxtext: 'Увеличьте продажи, используя новейшие 3D технологии для сайтов строительных компаний',
               rightboxtext: 'Новый уровень визуализации недвижимости',
               background: 'Трёхмерный виджет',
+              button: 'Назначить демо',
             },
             widget: {
               featuresWidgetSection: {
@@ -109,6 +110,7 @@ i18n
               leftboxtext: 'Increase sales by using the latest 3D technologies for construction companies websites',
               rightboxtext: 'A new level of real estate visualization',
               background: 'Three-dimensional widget',
+              button: 'Assign a demo',
             },
             widget: {
               featuresWidgetSection: {
