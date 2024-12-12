@@ -16,7 +16,8 @@
   cursor: pointer;
   transition: background-color 0.3s;
   box-shadow: 0 0 26px 4px rgb(0 177 184 / 30%) inset;
-  border: 1px solid linear-gradient(90deg, #00b1b8 0%, #f5f5f5 25.13%, #f5f5f5 75.5%, #00b1b8 100%);
+
+  // border: 1px solid linear-gradient(90deg, #00b1b8 0%, #f5f5f5 25.13%, #f5f5f5 75.5%, #00b1b8 100%);
   border-image-source: linear-gradient(90deg, #00b1b8 0%, #f5f5f5 25.13%, #f5f5f5 75.5%, #00b1b8 100%);
 
   @media (width <= 360px) {
