@@ -3,11 +3,11 @@ import { useAdvantages } from '../../utils/hooks/useAdvantages';
 import { useTranslation } from 'react-i18next';
 import styles from './Advantages.module.scss';
 import { useInView } from 'motion/react';
-import { ContextProvider } from '../../Context/Context';
+import { LanguageContext } from '../../Context/LanguageContext';
 import { Lang } from '../../utils/api/apiTypes';
 
 const Advantages: React.FC = () => {
-  const { language } = useContext(ContextProvider);
+  const { language } = useContext(LanguageContext);
   const { t } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });

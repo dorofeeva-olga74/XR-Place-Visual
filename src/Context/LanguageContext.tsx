@@ -6,7 +6,7 @@ export interface LanguageContextType {
   handleLangChange: (language: 'RU' | 'EN') => void;
 }
 
-const ContextProvider = createContext<LanguageContextType>({
+const LanguageContext = createContext<LanguageContextType>({
   language: 'RU',
   handleLangChange: () => {},
 });
@@ -19,7 +19,7 @@ const LanguageContextProvider = ({ children }: { children: React.ReactNode }) =>
     setLanguage(lang);
   };
 
-  return <ContextProvider.Provider value={{ language, handleLangChange }}>{children}</ContextProvider.Provider>;
+  return <LanguageContext.Provider value={{ language, handleLangChange }}>{children}</LanguageContext.Provider>;
 };
 
-export { LanguageContextProvider, ContextProvider };
+export { LanguageContextProvider, LanguageContext };

@@ -6,14 +6,14 @@ import { useState } from 'react';
 import PopUp from './PopUp/PopUp';
 import useWindowWidth from '../../utils/hooks/useWindowWidth';
 import { useTranslation } from 'react-i18next';
-import { ContextProvider, LanguageContextType } from '../../Context/Context';
+import { LanguageContext, LanguageContextType } from '../../Context/LanguageContext';
 import { useContext } from 'react';
 
 export default function Header() {
   const { width } = useWindowWidth();
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { language, handleLangChange } = useContext(ContextProvider) as LanguageContextType;
+  const { language, handleLangChange } = useContext(LanguageContext) as LanguageContextType;
 
   const handleMenuOpen = () => {
     setIsMenuOpen((prev) => !prev);
@@ -36,10 +36,10 @@ export default function Header() {
             <LangButton windowWidth={width} handleLangChange={handleLangChange} />
           </>
         ) : (
-          !isMenuOpen && <LangButton OpenPopup={handleMenuOpen} windowWidth={width} isMenuOpen={isMenuOpen} />
+          !isMenuOpen && <LangButton OpenPopup={handleMenuOpen} windowWidth={width} isMenuOpen={isMenuOpen} handleLangChange={handleLangChange} />
         )}
       </header>
-      {isMenuOpen && <PopUp ClosePopUp={handleMenuOpen} windowWidth={width} isMenuOpen={isMenuOpen} />}
+      {isMenuOpen && <PopUp ClosePopUp={handleMenuOpen} windowWidth={width} isMenuOpen={isMenuOpen} handleLangChange={handleLangChange} />}
     </>
   );
 }

@@ -5,11 +5,11 @@ import { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import useWindowWidth from '../../utils/hooks/useWindowWidth';
 import { useTranslation } from 'react-i18next';
 import { useInView } from 'motion/react';
-import { ContextProvider } from '../../Context/Context';
+import { LanguageContext } from '../../Context/LanguageContext';
 import { Lang } from '../../utils/api/apiTypes';
 
 function Projects() {
-  const { language } = useContext(ContextProvider);
+  const { language } = useContext(LanguageContext);
   const { width } = useWindowWidth();
   const [index, setIndex] = useState(0);
   const [projectsDisplayed, setProjectsDisplayed] = useState([]);

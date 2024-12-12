@@ -6,7 +6,7 @@ import useWindowWidth from '../../utils/hooks/useWindowWidth';
 import { useTranslation } from 'react-i18next';
 import { useRef, useContext } from 'react';
 import { useInView } from 'motion/react';
-import { ContextProvider } from '../../Context/Context';
+import { LanguageContext } from '../../Context/LanguageContext';
 
 function Description() {
   const { t } = useTranslation();
@@ -19,7 +19,7 @@ function Description() {
 }
 
 function Schema() {
-  const { language } = useContext(ContextProvider);
+  const { language } = useContext(LanguageContext);
   const { t } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });

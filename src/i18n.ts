@@ -110,7 +110,7 @@ i18n
               leftboxtext: 'Increase sales by using the latest 3D technologies for construction companies websites',
               rightboxtext: 'A new level of real estate visualization',
               background: 'Three-dimensional widget',
-              button: 'Assign a demo',
+              button: 'Book a demo',
             },
             widget: {
               featuresWidgetSection: {

@@ -9,7 +9,7 @@ import Footer from './components/Footer/Footer';
 import Intro from './components/Intro/Intro';
 import Header from './components/Header/Header';
 import Schema from './components/Schema/Schema';
-import { LanguageContextProvider } from './Context/Context';
+import { LanguageContextProvider } from './Context/LanguageContext';
 
 function App() {
   return (
