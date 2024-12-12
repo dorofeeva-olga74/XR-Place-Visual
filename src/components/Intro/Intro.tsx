@@ -16,7 +16,7 @@ export default function Intro() {
       <div className={styles['intro-text']}>
         <div className={styles['intro-text-leftbox']}>
           <p className={styles['intro-text-leftbox-text']}>{t('components.intro.leftboxtext')}</p>
-          <IntroButton children={'Назначить демо'} />
+          <IntroButton children={t('components.intro.button')} />
         </div>
         <div className={styles['intro-text-rightbox']}>
           {width >= 768 && <h1 className={styles['intro-text-rightbox-h1']}>XR PLACE</h1>}

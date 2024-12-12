@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useAdvantages } from '../../utils/hooks/useAdvantages';
 import { useTranslation } from 'react-i18next';
 import styles from './Advantages.module.scss';
+import { Context, ContextType } from '../../Context/Context';
+import { Lang } from '../../utils/api/apiTypes';
 
 const Advantages: React.FC = () => {
+  const { language } = useContext(Context) as ContextType;
   const { t } = useTranslation();
-  const advantages = useAdvantages('RU');
+  const advantages = useAdvantages(language.toUpperCase() as Lang);
 
   if (advantages.isError) {
     return null;

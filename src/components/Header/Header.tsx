@@ -6,16 +6,22 @@ import { useState } from 'react';
 import PopUp from './PopUp/PopUp';
 import useWindowWidth from '../../utils/hooks/useWindowWidth';
 import { useTranslation } from 'react-i18next';
+import { Context, ContextType } from '../../Context/Context';
+import { useContext } from 'react';
 
 export default function Header() {
   const { width } = useWindowWidth();
   const { t } = useTranslation();
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, handleLangChange } = useContext(Context) as ContextType;
 
   const handleMenuOpen = () => {
     setIsMenuOpen((prev) => !prev);
   };
+
+  if (!language || !handleLangChange) {
+    throw new Error('Контекст не найден');
+  }
 
   return (
     <>
@@ -27,7 +33,7 @@ export default function Header() {
         {width >= 1440 ? (
           <>
             <Navigation />
-            <LangButton windowWidth={width} />
+            <LangButton windowWidth={width} handleLangChange={handleLangChange} />
           </>
         ) : (
           !isMenuOpen && <LangButton OpenPopup={handleMenuOpen} windowWidth={width} isMenuOpen={isMenuOpen} />

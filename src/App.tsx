@@ -9,10 +9,11 @@ import Footer from './components/Footer/Footer';
 import Intro from './components/Intro/Intro';
 import Header from './components/Header/Header';
 import Schema from './components/Schema/Schema';
+import { ContextProvider } from './Context/Context';
 
 function App() {
   return (
-    <>
+    <ContextProvider>
       <Layout>
         <Header />
         <Intro />
@@ -25,7 +26,7 @@ function App() {
         <Claim />
         <Footer />
       </Layout>
-    </>
+    </ContextProvider>
   );
 }
 

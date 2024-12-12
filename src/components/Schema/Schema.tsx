@@ -1,9 +1,11 @@
 import styles from './Schema.module.scss';
 import image from './../../vendor/images/Schema.png';
 import { useSchema } from '../../utils/hooks/useSchema';
-import { SchemaStage } from '../../utils/api/apiTypes';
+import { Lang, SchemaStage } from '../../utils/api/apiTypes';
 import useWindowWidth from '../../utils/hooks/useWindowWidth';
 import { useTranslation } from 'react-i18next';
+import { useContext } from 'react';
+import { Context, ContextType } from '../../Context/Context';
 
 function Description() {
   const { t } = useTranslation();
@@ -16,9 +18,11 @@ function Description() {
 }
 
 function Schema() {
+  const { language } = useContext(Context) as ContextType;
   const { t } = useTranslation();
-  const schema = useSchema('RU');
+  const schema = useSchema(language.toUpperCase() as Lang);
   const { width } = useWindowWidth();
+
   return (
     <section className={styles.schema__container}>
       <div className={styles.schema__overview}>
