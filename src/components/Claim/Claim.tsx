@@ -28,7 +28,7 @@ function Claim() {
 
   return (
     <FormProvider {...methods}>
-      <form className={styles.claim__container} onSubmit={methods.handleSubmit(onSubmit)}>
+      <form id="claim-form" className={styles.claim__container} onSubmit={methods.handleSubmit(onSubmit)}>
         <h2 className={styles.claim__title}>{t('components.claim.title')}</h2>
         <div className={styles.claim__inputs}>
           {inputs.map((input, index) => {
