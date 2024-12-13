@@ -15,9 +15,6 @@ const FeaturesTextSection: React.FC = () => {
         if (entry.isIntersecting) {
           element.classList.add(styles.visible);
           element.classList.remove(styles.hidden);
-        } else {
-          element.classList.add(styles.hidden);
-          element.classList.remove(styles.visible);
         }
       },
       { threshold: 0.1 }

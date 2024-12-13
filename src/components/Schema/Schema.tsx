@@ -1,9 +1,12 @@
 import styles from './Schema.module.scss';
 import image from './../../vendor/images/Schema.png';
 import { useSchema } from '../../utils/hooks/useSchema';
-import { SchemaStage } from '../../utils/api/apiTypes';
+import { Lang, SchemaStage } from '../../utils/api/apiTypes';
 import useWindowWidth from '../../utils/hooks/useWindowWidth';
 import { useTranslation } from 'react-i18next';
+import { useRef, useContext } from 'react';
+import { useInView } from 'motion/react';
+import { LanguageContext } from '../../Context/LanguageContext';
 
 function Description() {
   const { t } = useTranslation();
@@ -16,9 +19,13 @@ function Description() {
 }
 
 function Schema() {
+  const { language } = useContext(LanguageContext);
   const { t } = useTranslation();
-  const schema = useSchema('RU');
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const schema = useSchema(language as Lang, isInView);
   const { width } = useWindowWidth();
+
   return (
     <section id="process" className={styles.schema__container}>
       <div className={styles.schema__overview}>
