@@ -44,6 +44,8 @@
   npm run build
 ```
 
+Запусти превью
+
 ```bash
   npm run preview
 ```
