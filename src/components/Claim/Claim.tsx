@@ -7,10 +7,10 @@ import { Claim as ClaimInputs } from '../../utils/api/apiTypes';
 import { useClaim } from '../../utils/hooks/useClaim';
 import { useEffect } from 'react';
 
-function Input({ input }) {
+function Input({ input }: { input: { name: string; required: boolean } }) {
   const { t } = useTranslation();
   const { register } = useFormContext();
-  return <input className={styles.claim__input} name={input.name} placeholder={t(`components.claim.${input.name}`)} required={input.required} {...register(input.name)}></input>;
+  return <input className={styles.claim__input} placeholder={t(`components.claim.${input.name}`)} required={input.required} {...register(input.name)}></input>;
 }
 
 function Claim() {

@@ -6,13 +6,13 @@ import useWindowWidth from '../../utils/hooks/useWindowWidth';
 import { useTranslation } from 'react-i18next';
 import { useInView } from 'motion/react';
 import { LanguageContext } from '../../Context/LanguageContext';
-import { Lang } from '../../utils/api/apiTypes';
+import { Lang, Project } from '../../utils/api/apiTypes';
 
 function Projects() {
   const { language } = useContext(LanguageContext);
   const { width } = useWindowWidth();
   const [index, setIndex] = useState(0);
-  const [projectsDisplayed, setProjectsDisplayed] = useState([]);
+  const [projectsDisplayed, setProjectsDisplayed] = useState<Project[] | never[]>([]);
   const { t } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
