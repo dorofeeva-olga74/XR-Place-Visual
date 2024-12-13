@@ -13,6 +13,7 @@
     .navigation-list-item-link {
       color: globals.$white-txt;
       text-decoration: none;
+      cursor: pointer;
 
       @include globals.text-text-m;
 
