@@ -9,6 +9,14 @@ import { useTranslation } from 'react-i18next';
 export default function Intro() {
   const { width } = useWindowWidth();
   const { t } = useTranslation();
+
+  const handleDemoClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    event.preventDefault();
+    const formElement = document.getElementById('claim-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section className={styles['intro']}>
       {/* это для iframe */}
@@ -16,7 +24,9 @@ export default function Intro() {
       <div className={styles['intro-text']}>
         <div className={styles['intro-text-leftbox']}>
           <p className={styles['intro-text-leftbox-text']}>{t('components.intro.leftboxtext')}</p>
-          <IntroButton children={'Назначить демо'} />
+          <a href="#claim-form" className={styles['intro-button-link']} onClick={handleDemoClick}>
+            <IntroButton children={'Назначить демо'} />
+          </a>
         </div>
         <div className={styles['intro-text-rightbox']}>
           {width >= 768 && <h1 className={styles['intro-text-rightbox-h1']}>XR PLACE</h1>}

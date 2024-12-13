@@ -40,6 +40,10 @@
       flex-direction: column;
       gap: 32px;
 
+      .intro-button-link {
+        text-decoration: none;
+      }
+
       @media (width < 1440px) {
         padding-top: 0;
         width: 329px;
