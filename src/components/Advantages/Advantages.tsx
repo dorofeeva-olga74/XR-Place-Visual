@@ -18,7 +18,7 @@ const Advantages: React.FC = () => {
   }
 
   return (
-    <section id="advantages" className={styles.advantages}>
+    <section id="advantages" ref={ref} className={styles.advantages}>
       <h2 className={styles.advantages__title}>{t('components.advantages.title')}</h2>
       <div className={styles.advantages__details}>
         {advantages.isSuccess &&

@@ -9,11 +9,11 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
   const { t } = useTranslation();
 
   const menuListItem = [
-    { id: 'widget', name: t('components.header.widget'), href: '#widget' },
+    { id: 'widget', name: t('components.header.widget'), href: `'#widget'` },
     { id: 'advantages', name: t('components.header.advantages'), href: '#advantages' },
     { id: 'examples', name: t('components.header.project'), href: '#examples' },
     { id: 'metrics', name: t('components.header.metrics'), href: '#metrics' },
-    { id: 'process', name: t('components.header.process'), href: '#process' },
+    { id: 'schema', name: t('components.header.process'), href: '#schema' },
     { id: 'team', name: t('components.header.team'), href: '#team' },
   ];
 
@@ -30,10 +30,9 @@ const Navigation: React.FC<NavigationProps> = ({ className }) => {
       <ul className={`${styles['navigation-list']} ${className}`}>
         {menuListItem.map((item) => (
           <li className={styles['navigation-list-item']} key={item.id}>
-            <a className={styles['navigation-list-item-link']} href={item.href} onClick={(event) => handleButtonClick(event, item.id)}>
+            <a className={styles['navigation-list-item-link']} onClick={(event) => handleButtonClick(event, item.id)}>
               {item.name}
             </a>
-            {/* здесь "а" заменим на Link из хука навигации*/}
           </li>
         ))}
       </ul>
