@@ -1,9 +1,10 @@
 import { createContext, useState } from 'react';
 import i18n from '../i18n';
+import { Lang } from '../utils/api/apiTypes';
 
 export interface LanguageContextType {
-  language: 'RU' | 'EN';
-  handleLangChange: (language: 'RU' | 'EN') => void;
+  language: Lang;
+  handleLangChange: (language: Lang) => void;
 }
 
 const LanguageContext = createContext<LanguageContextType>({
@@ -12,9 +13,9 @@ const LanguageContext = createContext<LanguageContextType>({
 });
 
 const LanguageContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const [language, setLanguage] = useState<'RU' | 'EN'>('RU');
+  const [language, setLanguage] = useState<Lang>('RU');
 
-  const handleLangChange = (lang: 'RU' | 'EN') => {
+  const handleLangChange = (lang: Lang) => {
     i18n.changeLanguage(lang.toLowerCase());
     setLanguage(lang);
   };

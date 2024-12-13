@@ -2,12 +2,13 @@ import styles from './PopUp.module.scss';
 import LangButton from '../LangButton/LangButton';
 import Navigation from '../Navigation/Navigation';
 import Logo from '../../../vendor/images/logo1.svg';
+import { Lang } from '../../../utils/api/apiTypes';
 
 interface PopUpProps {
   ClosePopUp: () => void;
   isMenuOpen?: boolean;
   windowWidth?: number;
-  handleLangChange: (language: 'RU' | 'EN') => void;
+  handleLangChange: (language: Lang) => void;
 }
 
 const PopUp: React.FC<PopUpProps> = ({ ClosePopUp, isMenuOpen, windowWidth, handleLangChange }) => {

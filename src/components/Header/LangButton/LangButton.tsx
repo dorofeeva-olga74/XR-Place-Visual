@@ -1,12 +1,13 @@
 import separator from '../../../vendor/images/Lang.svg';
 import styles from './LangButton.module.scss';
+import { Lang } from '../../../utils/api/apiTypes';
 
 interface LangButtonProps {
   OpenPopup?: () => void;
   className?: string;
   isMenuOpen?: boolean;
   windowWidth?: number;
-  handleLangChange: (language: 'RU' | 'EN') => void;
+  handleLangChange: (language: Lang) => void;
 }
 
 const LangButton: React.FC<LangButtonProps> = ({ OpenPopup, className, isMenuOpen, windowWidth, handleLangChange }) => {
@@ -18,7 +19,7 @@ const LangButton: React.FC<LangButtonProps> = ({ OpenPopup, className, isMenuOpe
             En
           </button>
           <img src={separator} alt="Разделитель" />
-          <button className={styles['lang-section-link']} onClick={() => handleLangChange('RU')}>
+          <button type="button" className={styles['lang-section-link']} onClick={() => handleLangChange('RU')}>
             Рус
           </button>
         </>
