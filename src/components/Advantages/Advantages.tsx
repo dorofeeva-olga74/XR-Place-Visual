@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useAdvantages } from '../../utils/hooks/useAdvantages';
 import { useTranslation } from 'react-i18next';
 import styles from './Advantages.module.scss';
+import { useInView } from 'motion/react';
 
 const Advantages: React.FC = () => {
   const { t } = useTranslation();
-  const advantages = useAdvantages('RU');
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const advantages = useAdvantages('RU', isInView);
 
   if (advantages.isError) {
     return null;
   }
 
   return (
-    <section className={styles.advantages}>
+    <section ref={ref} className={styles.advantages}>
       <h2 className={styles.advantages__title}>{t('components.advantages.title')}</h2>
       <div className={styles.advantages__details}>
         {advantages.isSuccess &&
