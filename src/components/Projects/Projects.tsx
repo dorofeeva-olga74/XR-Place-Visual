@@ -1,19 +1,23 @@
 import { useProjects } from '../../utils/hooks/useProjects';
 import styles from './Projects.module.scss';
 import arrowButton from './../../vendor/images/arrow-button.svg';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import useWindowWidth from '../../utils/hooks/useWindowWidth';
 import { useTranslation } from 'react-i18next';
 import { useInView } from 'motion/react';
+import { LanguageContext } from '../../Context/LanguageContext';
+import { Lang } from '../../utils/api/apiTypes';
 
 function Projects() {
+  const { language } = useContext(LanguageContext);
   const { width } = useWindowWidth();
   const [index, setIndex] = useState(0);
   const [projectsDisplayed, setProjectsDisplayed] = useState([]);
   const { t } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const data = useProjects('RU', isInView);
+  const data = useProjects(language as Lang, isInView);
+
   // artificially make projects array longer to demonstrate 'load more' button click effect
   const projects = useMemo(() => (data.isSuccess ? data.data.concat(data.data) : []), [data.isSuccess, data.data]);
   const handleClick = () => {
