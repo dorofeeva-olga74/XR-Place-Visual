@@ -22,7 +22,7 @@ const Widget: React.FC = () => {
     offset: ['start 0.9', 'end 0.7'],
   });
   return (
-    <section className={styles['widget']}>
+    <section id="widget" className={styles['widget']}>
       <div ref={ref} className={styles['grid-background']}>
         {gridElements.map((item, index) => (
           <div key={`${item} - ${index}`} className={styles['grid-item']} />

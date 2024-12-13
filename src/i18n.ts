@@ -21,7 +21,7 @@ i18n
               project: 'Реализованные проекты',
               metrics: 'Метрики',
               process: 'Процесс работы',
-              about: 'О нас',
+              team: 'О нас',
               logotip: 'Логотип',
             },
             intro: {
@@ -103,7 +103,7 @@ i18n
               project: 'Completed projects',
               metrics: 'Metrics',
               process: 'Work process',
-              about: 'About us',
+              team: 'About us',
               logotip: 'Logo',
             },
             intro: {

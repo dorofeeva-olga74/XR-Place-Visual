@@ -27,7 +27,7 @@ function Schema() {
   const { width } = useWindowWidth();
 
   return (
-    <section ref={ref} className={styles.schema__container}>
+    <section id="schema" ref={ref} className={styles.schema__container}>
       <div className={styles.schema__overview}>
         <h2 className={styles.schema__title}>{t('components.schema.title')}</h2>
         {width >= 360 && <Description />}

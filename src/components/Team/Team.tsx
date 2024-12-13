@@ -12,7 +12,7 @@ const Team: React.FC = () => {
   const team = useTeam('RU', isInView);
 
   return (
-    <section ref={ref} className={styles['team']}>
+    <section id="team" ref={ref} className={styles['team']}>
       <div className={styles['team-grid']}>
         <GridItem type="custom" gridArea="title" customContent={<h2 className={styles['team-title']}>{t('components.team.title')}</h2>} />
         <GridItem gridArea="item2" />
