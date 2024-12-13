@@ -4,6 +4,10 @@
 
 ## Команда фронтенд разработчиков:
 
+- [Гетманский Сергей @SergeyGetmanskiy - тимлид](https://github.com/SergeyGetmanskiy)
+- [Горобец Ольга @dorofeeva-olga74 ](https://github.com/dorofeeva-olga74)
+- [Феденев Илья @FedenevI ](https://github.com/FedenevI)
+
 ## Инструкция по сборке и запуску:
 
 Склонируй проект
@@ -32,6 +36,26 @@
 
 Проект должен быть доступен по адресу: http://localhost:5173/ (порт по умолчанию)
 
+## Запуск превью продакшена:
+
+Создай продакшен-сборку
+
+```bash
+  npm run build
+```
+
+```bash
+  npm run preview
+```
+
+Проект должен быть доступен по адресу: http://localhost:4173/ (порт по умолчанию)
+
 ## Стек технологий
 
 - [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Sass / SCSS](https://sass-lang.com/)
+- [TanStack Query](https://tanstack.com/query/latest/docs/framework/react/overview/)
+- [react-hook-form](https://react-hook-form.com/)
+- [i18next](https://www.i18next.com/)
+- [motion](https://motion.dev/)
