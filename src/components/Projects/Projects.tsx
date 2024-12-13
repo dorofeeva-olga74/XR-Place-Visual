@@ -33,7 +33,7 @@ function Projects() {
 
   if (projectsDisplayed)
     return (
-      <section ref={ref} className={styles.projects}>
+      <section id="examples" ref={ref} className={styles.projects}>
         <h2 className={styles.projects__title}>{t('components.projects.completedProjects')}</h2>
         <ul className={styles.projects__grid}>
           <li className={styles.projects__description}>

@@ -11,7 +11,7 @@ const Metrics: React.FC = () => {
   const metrics = useMetrics('RU', isInView);
 
   return (
-    <section ref={ref} className={styles['metrics']}>
+    <section id="metrics" ref={ref} className={styles['metrics']}>
       <h2 className={styles['metrics-title']}>{t('components.metrics.title')}</h2>
       <div className={styles['metrics-details']}>
         {metrics.isSuccess &&

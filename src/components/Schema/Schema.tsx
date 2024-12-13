@@ -20,7 +20,7 @@ function Schema() {
   const schema = useSchema('RU');
   const { width } = useWindowWidth();
   return (
-    <section className={styles.schema__container}>
+    <section id="process" className={styles.schema__container}>
       <div className={styles.schema__overview}>
         <h2 className={styles.schema__title}>{t('components.schema.title')}</h2>
         {width >= 360 && <Description />}

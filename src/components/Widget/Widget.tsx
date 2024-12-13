@@ -7,7 +7,7 @@ import { gridElements } from '../../utils/consts';
 
 const Widget: React.FC = () => {
   return (
-    <section className={styles['widget']}>
+    <section id="widget" className={styles['widget']}>
       <div className={styles['grid-background']}>
         {gridElements.map((item, index) => (
           <div key={`${item} - ${index}`} className={styles['grid-item']} />
