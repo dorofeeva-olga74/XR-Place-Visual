@@ -5,6 +5,7 @@
   flex-direction: column;
   gap: 160px;
   padding: 118px 0;
+  position: relative;
 
   .grid-background {
     position: absolute;
@@ -62,7 +63,13 @@
     padding: 0;
 
     .widget-circle-container {
+      position: relative;
       display: flex;
+      align-items: start;
+      height: 15px;
+      width: 300px;
+      z-index: 7;
+      margin: -8px -15px;
 
       @media (width <= 768px) {
         width: 22px;
@@ -84,4 +91,38 @@
     width: 100%;
     flex-direction: column;
   }
+
+  &_circle {
+    position: absolute;
+    background-color: globals.$black-bg;
+    left: -20px;
+    top: -20px;
+    width: 50px;
+    height: 50px;
+    background-image: url('./../../vendor/images/circle.png');
+    background-size: cover;
+
+    @media (width <= 360px) {
+      left: -10px;
+      top: -4px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.progress-ray-x {
+  position: absolute;
+  top: -42px;
+  left: -10px;
+  height: 100px;
+  transform-origin: 0%;
+}
+
+.progress-bar-y {
+  position: absolute;
+  top: -10px;
+  left: -45px;
+  width: 100px;
+  transform-origin: top center;
 }
