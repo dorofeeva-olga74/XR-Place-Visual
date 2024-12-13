@@ -1,14 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useRef, useContext } from 'react';
 import { useAdvantages } from '../../utils/hooks/useAdvantages';
 import { useTranslation } from 'react-i18next';
 import styles from './Advantages.module.scss';
 import { useInView } from 'motion/react';
+import { LanguageContext } from '../../Context/LanguageContext';
+import { Lang } from '../../utils/api/apiTypes';
 
 const Advantages: React.FC = () => {
+  const { language } = useContext(LanguageContext);
   const { t } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const advantages = useAdvantages('RU', isInView);
+  const advantages = useAdvantages(language as Lang, isInView);
 
   if (advantages.isError) {
     return null;
