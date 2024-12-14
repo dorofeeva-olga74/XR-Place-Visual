@@ -5,11 +5,9 @@
   grid-template: 1fr / repeat(2, 1fr);
   column-gap: 20px;
   color: globals.$light-grey-border;
-  padding: 160px 0;
 
   @media (width <= 768px) {
     display: block;
-    padding: 80px 0;
   }
 }
 
