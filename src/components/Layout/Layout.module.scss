@@ -1,9 +1,28 @@
 @use '/src/styles/globals';
 
 .layout {
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
   min-height: 100vh;
   padding: 0 34px;
   background-color: globals.$black-bg;
+
+  & header {
+    margin-bottom: -160px;
+
+    @media (width <= 768px) {
+      margin-bottom: -80px;
+    }
+  }
+
+  & footer {
+    margin-top: -40px;
+
+    @media (width <= 768px) {
+      margin-top: 0;
+    }
+  }
 
   &::before {
     content: '';
@@ -14,6 +33,10 @@
     height: 220px;
     background: linear-gradient(180deg, rgb(0 0 0 / 0%) 50%, rgb(0 202 229 / 30%) 102%);
     pointer-events: none;
+  }
+
+  @media (width <= 768px) {
+    gap: 80px;
   }
 
   @media (width <= 360px) {

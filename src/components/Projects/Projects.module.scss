@@ -6,12 +6,10 @@
   justify-content: center;
   align-items: center;
   gap: 100px;
-  padding: 160px 0;
   color: globals.$white-txt;
 
   @media (width <= 768px) {
     gap: 40px;
-    padding: 80px 0;
   }
 
   @media (width <= 460px) {
