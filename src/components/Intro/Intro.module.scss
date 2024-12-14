@@ -40,6 +40,10 @@
       z-index: 2;
     }
 
+    @media (width < 400px) {
+      gap: 200px;
+    }
+
     .intro-text-leftbox {
       width: 100%;
       padding-top: 20px;
