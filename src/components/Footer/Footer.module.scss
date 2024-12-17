@@ -1,0 +1,149 @@
+@use '../../styles/globals';
+
+.footer {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    'logoText logoText descriptionText descriptionText'
+    'logoTitle logoTitle socialBox socialBox'
+    'address address address address';
+  grid-auto-columns: minmax(auto, 1fr);
+  padding: 40px 0;
+  color: globals.$white-txt;
+  position: relative;
+  border-top: 2px solid transparent;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #080808 -2.44%, #878787 50%, #080808 102.44%);
+    pointer-events: none;
+  }
+
+  &__logoImg {
+    display: none;
+    grid-area: logoImg;
+
+    @media (width <= 600px) {
+      display: block;
+    }
+  }
+
+  &__logoSet {
+    grid-area: logoText;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    height: auto;
+  }
+
+  &__logoTitle {
+    margin: 0;
+    padding: 20px 0 0;
+    grid-area: logoTitle;
+
+    @include globals.desktop-h1;
+
+    @media (width <= 768px) {
+      font-size: 64px;
+    }
+
+    @media (width <= 600px) {
+      padding: 0;
+
+      @include globals.mobile-h1;
+    }
+  }
+
+  &__descriptionText {
+    padding-left: 10px;
+    text-align: end;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1;
+    grid-area: descriptionText;
+
+    @media (width <= 768px) {
+      @include globals.text-text-m;
+    }
+
+    @media (width <= 600px) {
+      text-align: start;
+      padding-left: 0;
+
+      @include globals.mobile-m;
+    }
+  }
+
+  &__socialBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    grid-area: socialBox;
+
+    @media (width <= 600px) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__addressSet {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    grid-area: address;
+
+    @media (width <= 790px) {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    @media (width <= 600px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__address {
+    @include globals.text-text-xs;
+
+    @media (width <= 600px) {
+      color: globals.$grey-border;
+
+      @include globals.mobile-m;
+    }
+  }
+
+  @media (width <= 1160px) {
+    padding: 40px 0 20px;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      'logoText descriptionText descriptionText descriptionText'
+      'logoTitle logoTitle logoTitle logoTitle'
+      'socialBox socialBox socialBox socialBox'
+      'address address address address'
+      'address address address address';
+    grid-auto-columns: minmax(auto, 1fr);
+  }
+
+  @media (width <= 600px) {
+    grid-template-areas:
+      'logoImg logoTitle'
+      'descriptionText descriptionText'
+      'logoText logoText'
+      'socialBox socialBox'
+      'address address';
+    grid-auto-columns: 20% 80%;
+    gap: 20px 0;
+  }
+}

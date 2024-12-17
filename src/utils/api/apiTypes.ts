@@ -1,3 +1,5 @@
+export type Lang = 'RU' | 'EN';
+
 export type Advantage = {
   id: number;
   item_number: number;

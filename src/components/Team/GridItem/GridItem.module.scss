@@ -1,0 +1,116 @@
+@use '../../../styles/globals';
+
+.grid-item-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid globals.$dark-grey-border;
+  border-bottom: 2px solid globals.$dark-grey-border;
+
+  @media (width <= 768px) {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0 0 40px;
+    border-radius: 0;
+    border: none;
+
+    &[style*='grid-area: title'] {
+      border-bottom: 2px solid globals.$dark-grey-border;
+    }
+  }
+}
+
+.grid-item-circle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: -8px;
+
+  @media (width <= 768px) {
+    display: none;
+  }
+}
+
+.grid-item-container-title {
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: globals.$white-txt;
+  grid-area: title;
+}
+
+.grid-item-container[style*='grid-area: title'] {
+  padding: 0 0 40px;
+}
+
+.grid-item-image {
+  width: 247px;
+  height: 247px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  @media (width <= 768px) {
+    width: 100%;
+    height: 280px;
+    padding: 40px 0 12px;
+    border-radius: 0;
+  }
+
+  @media (width <= 320px) {
+    height: 150px;
+  }
+}
+
+.grid-item-title,
+.grid-item-subtitle {
+  color: globals.$white-txt;
+  text-align: center;
+
+  @include globals.text-text-m;
+
+  @media (width <= 768px) {
+    width: 100%;
+    text-align: left;
+
+    @include globals.mobile-m;
+  }
+}
+
+.grid-item-text {
+  color: globals.$white-txt;
+
+  @include globals.text-text-m;
+}
+
+.grid-item-custom {
+  display: flex;
+
+  & h1,
+  & h2,
+  & p {
+    margin: 0;
+    color: globals.$white-txt;
+  }
+
+  @media (width <= 768px) {
+    width: 100%;
+
+    @include globals.mobile-m;
+  }
+}
+
+@media (width <= 768px) {
+  .grid-item-container[style*='grid-area: item2'],
+  .grid-item-container[style*='grid-area: item3'],
+  .grid-item-container[style*='grid-area: item6'],
+  .grid-item-container[style*='grid-area: item7'],
+  .grid-item-container[style*='grid-area: item10'],
+  .grid-item-container[style*='grid-area: item11'],
+  .grid-item-container[style*='grid-area: item12'],
+  .grid-item-container[style*='grid-area: values'] {
+    display: none;
+  }
+}

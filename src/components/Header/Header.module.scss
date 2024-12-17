@@ -1,0 +1,52 @@
+@use '../../styles/globals';
+
+.header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  background-color: globals.$black-bg;
+  color: globals.$white-txt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (width < 1440px) {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 20px 34px;
+  }
+
+  @media (width < 768px) {
+    padding: 32px 20px 8px;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+  }
+
+  .header-logo-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header-logo-image {
+      padding: 8px 8px 8px 0;
+    }
+
+    .header-logo-text {
+      @include globals.text-subheader-s;
+
+      @media (width < 1440px) {
+        @include globals.mobile-h1;
+      }
+    }
+  }
+}

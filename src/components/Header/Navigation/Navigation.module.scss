@@ -1,0 +1,25 @@
+@use '../../../styles/globals';
+
+.navigation-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+
+  .navigation-list-item {
+    padding: 0 4px;
+    list-style: none;
+
+    .navigation-list-item-link {
+      color: globals.$white-txt;
+      text-decoration: none;
+      cursor: pointer;
+
+      @include globals.text-text-m;
+
+      @media (width < 1044px) {
+        text-decoration: underline;
+      }
+    }
+  }
+}
