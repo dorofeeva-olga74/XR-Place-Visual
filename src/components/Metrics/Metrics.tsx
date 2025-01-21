@@ -5,6 +5,7 @@ import styles from './Metrics.module.scss';
 import { useInView } from 'motion/react';
 import { LanguageContext } from '../../Context/LanguageContext';
 import { Lang } from '../../utils/api/apiTypes';
+import MetricsItem from './MetricsItem/MetricsItem';
 
 const Metrics: React.FC = () => {
   const { language } = useContext(LanguageContext);
@@ -14,19 +15,9 @@ const Metrics: React.FC = () => {
   const metrics = useMetrics(language as Lang, isInView);
 
   return (
-    <section id="metrics" ref={ref} className={styles['metrics']}>
-      <h2 className={styles['metrics-title']}>{t('components.metrics.title')}</h2>
-      <div className={styles['metrics-details']}>
-        {metrics.isSuccess &&
-          metrics.data.map((item) => {
-            return (
-              <div className={styles['metrics-set']} key={`${item.id}`}>
-                <p className={styles['metrics-text']}>{item.description}</p>
-                <span className={styles['metrics-span']}>{item.percent} %</span>
-              </div>
-            );
-          })}
-      </div>
+    <section id="metrics" ref={ref} className={styles.metrics}>
+      <h2 className={styles.metrics__title}>{t('components.metrics.title')}</h2>
+      <div className={styles.metrics__details}>{metrics.isSuccess && metrics.data && metrics.data.map((item, index) => <MetricsItem key={`${item.id}`} id={`${item.id}`} description={item.description} percent={item.percent} index={index} />)}</div>
     </section>
   );
 };

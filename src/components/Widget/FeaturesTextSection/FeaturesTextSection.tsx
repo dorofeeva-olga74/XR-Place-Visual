@@ -1,38 +1,30 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion, useInView } from 'motion/react';
 import styles from './FeaturesTextSection.module.scss';
 
 const FeaturesTextSection: React.FC = () => {
   const { t } = useTranslation();
-  const ref = useRef<HTMLDivElement | null>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true });
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const element = ref.current;
-
-    if (!element) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          element.classList.add(styles.visible);
-          element.classList.remove(styles.hidden);
-        }
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(element);
-    return () => {
-      observer.unobserve(element);
-    };
-  }, []);
+    if (isInView) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  }, [isInView]);
 
   return (
-    <div className={styles.shimmerTextSet} ref={ref}>
-      <p className={styles.shimmerText}>
+    <motion.div className={styles.shimmer} ref={ref} initial={{ opacity: 0, x: '-40px' }} animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: '-40px' }} transition={{ delay: 0.2, duration: 2, ease: 'easeInOut' }}>
+      <p className={styles.shimmer__text}>
         {t('components.widget.featuresTextSection.p')}
-        <span className={styles.shimmerSpan}>{t('components.widget.featuresTextSection.span')}</span>
+        <span className={styles.shimmer__text_span}>{t('components.widget.featuresTextSection.span')}</span>
         {t('components.widget.featuresTextSection.p2')}
       </p>
-    </div>
+    </motion.div>
   );
 };
 

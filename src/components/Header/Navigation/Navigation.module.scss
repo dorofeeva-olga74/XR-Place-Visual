@@ -1,24 +1,37 @@
 @use '../../../styles/globals';
 
-.navigation-list {
+.navigationList {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 28px;
 
-  .navigation-list-item {
+  &__item {
     padding: 0 4px;
     list-style: none;
 
-    .navigation-list-item-link {
-      color: globals.$white-txt;
+    &_link {
+      color: globals.$white-bg;
       text-decoration: none;
       cursor: pointer;
 
       @include globals.text-text-m;
 
-      @media (width < 1044px) {
+      &:hover {
+        color: #fff;
         text-decoration: underline;
+      }
+
+      &:active {
+        color: globals.$main-blue;
+      }
+
+      &_active {
+        color: globals.$main-blue;
+      }
+
+      @media (width <= 1024px) {
+        @include globals.mobile-m;
       }
     }
   }

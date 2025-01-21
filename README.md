@@ -1,6 +1,6 @@
-# Команда №2 Хакатон XR Place
+# Проект XR Place-Visualization
 
-Создание информационного сайта для застройщиков, который рассказывает о преимуществах показа квартиры и дома с использованием технологии real-time 3D.
+Создание информационного сайта для застройщиков, который рассказывает о преимуществах показа квартиры и дома клиентам с использованием технологии real-time 3D.
 
 ## Команда фронтенд разработчиков:
 
@@ -13,13 +13,13 @@
 Склонируй проект
 
 ```bash
-  git clone https://github.com/oksshubinaXRplace/XR-Place-team-2.git
+  git clone https://github.com/dorofeeva-olga74/XR-Place-Visual
 ```
 
 Перейди в папку проекта
 
 ```bash
-  cd XR-Place-team-2
+  cd XR-Place-Visual
 ```
 
 Установи зависимости
@@ -52,7 +52,7 @@
 
 Проект должен быть доступен по адресу: http://localhost:4173/ (порт по умолчанию)
 
-## Стек технологий
+### Стек технологий
 
 - [React](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -61,3 +61,7 @@
 - [react-hook-form](https://react-hook-form.com/)
 - [i18next](https://www.i18next.com/)
 - [motion](https://motion.dev/)
+
+#### Статус проекта:
+
+Проект завершен

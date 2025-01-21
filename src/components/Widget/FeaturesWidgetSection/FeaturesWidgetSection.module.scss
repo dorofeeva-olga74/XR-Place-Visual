@@ -1,57 +1,50 @@
 @use '../../../styles/globals';
 
-.features-widget-set {
-  width: 100%;
+.featuresWidget {
   display: flex;
   flex-direction: column;
 
-  .features-widget-title {
+  &__title {
     color: globals.$white-txt;
     margin: 0 0 5rem;
 
     @include globals.text-h2;
 
-    @media (width <= 768px) {
+    @media (width <= 1024px) {
       margin: 0 0 2.5rem;
 
       @include globals.mobile-h2;
     }
   }
 
-  .features-widget-fragment {
+  &__fragment {
     display: flex;
     flex-direction: row;
+    gap: 80px;
+    justify-content: space-between;
 
-    @media (width <= 768px) {
+    @media (width <= 1024px) {
       flex-direction: column-reverse;
+      gap: 36px;
     }
 
-    .features-widget-iframe-container {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      padding-top: 56.25%;
-      margin: 0 5rem 0 0;
+    &_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60%;
 
-      @media (width <= 768px) {
+      @media (width <= 1024px) {
         width: 100%;
-        margin: 1.25rem 0 0;
       }
     }
 
-    .features-widget-iframe {
-      border: 0;
-      position: absolute;
-      inset: 0;
+    &_img {
+      min-width: 100%;
       width: 100%;
       height: 100%;
-    }
-
-    .features-widget-img img {
-      width: 100%;
-      height: auto;
+      border-radius: 12px;
       object-fit: cover;
-      border-radius: 0.625rem;
     }
   }
 }

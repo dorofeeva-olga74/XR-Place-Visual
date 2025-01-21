@@ -15,7 +15,7 @@
 
     @include globals.text-text-xs;
 
-    @media (width <= 600px) {
+    @media (width <= 760px) {
       border-bottom: 1px solid globals.$light-grey-border;
 
       @include globals.mobile-m;
@@ -28,7 +28,7 @@
 
     @include globals.text-text-m;
 
-    @media (width <= 600px) {
+    @media (width <= 760px) {
       border-bottom: 1px solid globals.$light-grey-border;
 
       @include globals.mobile-m;

@@ -1,26 +1,17 @@
 @use '../../../styles/globals';
 
 .list {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-  counter-reset: list-counter;
-  width: 40%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   color: globals.$white-txt;
+  width: 40%;
 
-  @media (width <= 768px) {
-    width: 100%;
-  }
-
-  .list-item {
-    position: relative;
-    margin: 0;
+  .listItem {
+    display: flex;
+    flex-direction: column;
     counter-increment: list-counter;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 
     &:first-child {
       padding-top: 0;
@@ -29,12 +20,12 @@
     &::before {
       content: '0' counter(list-counter);
       color: globals.$light-grey-border;
-      display: block;
-      margin: 0 0 0.25rem;
+      position: relative;
+      z-index: 2;
 
       @include globals.text-subheader-s;
 
-      @media (width <= 768px) {
+      @media (width <= 1024px) {
         & {
           font-size: 24px;
           font-weight: 500;
@@ -43,22 +34,26 @@
       }
     }
 
+    &__gradient {
+      margin-top: 16px;
+    }
+
     @include globals.text-text-m;
 
-    @media (width <= 768px) {
+    @media (width <= 1024px) {
       & {
         @include globals.mobile-m;
       }
     }
   }
-}
 
-.progress-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: globals.$grey-border;
-  transform-origin: 0%;
+  @media (width <= 1024px) {
+    .listItem:nth-child(5) .listItem__gradient {
+      display: none;
+    }
+  }
+
+  @media (width <= 1024px) {
+    width: 100%;
+  }
 }

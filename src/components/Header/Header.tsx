@@ -1,17 +1,15 @@
 import styles from './Header.module.scss';
 import Navigation from './Navigation/Navigation';
-import LangButton from './LangButton/LangButton';
-import Logo from '../../vendor/images/logo1.svg';
-import { useState } from 'react';
+import HeaderButton from './HeaderButton/HeaderButton';
+import Logo from '../Ui/Logo/Logo';
+import { useState, useContext } from 'react';
 import PopUp from './PopUp/PopUp';
 import useWindowWidth from '../../utils/hooks/useWindowWidth';
-import { useTranslation } from 'react-i18next';
 import { LanguageContext, LanguageContextType } from '../../Context/LanguageContext';
-import { useContext } from 'react';
+import { WINDOW_WIDTH_LARGE } from '../../utils/consts';
 
 export default function Header() {
   const { width } = useWindowWidth();
-  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, handleLangChange } = useContext(LanguageContext) as LanguageContextType;
 
@@ -25,21 +23,21 @@ export default function Header() {
 
   return (
     <>
-      <header className={styles['header']}>
-        <div className={styles['header-logo-section']}>
-          <img className={styles['header-logo-image']} src={Logo} alt={t('components.header.logotip')} />
-          <p className={styles['header-logo-text']}>XR PLACE</p>
+      <header className={styles.header}>
+        <div className={styles.header__logo}>
+          <Logo />
+          <p className={styles.header__logo_text}>XR PLACE</p>
         </div>
-        {width >= 1440 ? (
+        {width <= WINDOW_WIDTH_LARGE ? (
+          !isMenuOpen && <HeaderButton OpenPopup={handleMenuOpen} windowWidth={width} isMenuOpen={isMenuOpen} handleLangChange={handleLangChange} />
+        ) : (
           <>
             <Navigation />
-            <LangButton windowWidth={width} handleLangChange={handleLangChange} />
+            <HeaderButton windowWidth={width} handleLangChange={handleLangChange} />
           </>
-        ) : (
-          !isMenuOpen && <LangButton OpenPopup={handleMenuOpen} windowWidth={width} isMenuOpen={isMenuOpen} handleLangChange={handleLangChange} />
         )}
       </header>
-      {isMenuOpen && <PopUp ClosePopUp={handleMenuOpen} windowWidth={width} isMenuOpen={isMenuOpen} handleLangChange={handleLangChange} />}
+      <PopUp ClosePopUp={handleMenuOpen} windowWidth={width} isMenuOpen={isMenuOpen} handleLangChange={handleLangChange} />
     </>
   );
 }

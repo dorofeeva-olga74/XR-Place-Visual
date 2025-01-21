@@ -52,7 +52,7 @@ i18n
             },
             team: {
               title: 'КТО МЫ?',
-              imageAlt: 'Фотография ',
+              imageAlt: 'Фотография',
               missionTitle5: 'МИССИЯ',
               missionSubtitle5: 'НАША',
               missionText5: 'Увеличение продаж недвижимости для наших клиентов с использованием инновационных 3D веб-технологий',
@@ -83,6 +83,7 @@ i18n
               title: 'СХЕМА РАБОТЫ',
               description: 'вы получаете гарантию качества, внимание к деталям и соблюдение сроков',
               descriptionSpan: 'Выбирая нас, ',
+              image: 'Схема дома',
             },
             footer: {
               logoAlt: 'Логотип компании',
@@ -120,7 +121,7 @@ i18n
               featuresTextSection: {
                 p: 'We create photorealistic',
                 span: ' 3D visualizations',
-                p2: '", which enhance the appeal of your projects by giving clients a sense of full immersion',
+                p2: ', which enhance the appeal of your projects by giving clients a sense of full immersion',
               },
               list: {
                 items: ['Widget easily integrates into any site', 'Available on any device', 'Interactive customer engagement', 'Accurate window view for each layout', 'Freedom of movement like in a computer game'],
@@ -165,6 +166,7 @@ i18n
               title: 'HOW IT WORKS',
               description: 'you are guaranteed high quality, attention to detail and compliance with deadlines',
               descriptionSpan: 'With us ',
+              image: 'House plan',
             },
             footer: {
               logoAlt: 'Company logo',

@@ -1,0 +1,19 @@
+.logo {
+  width: 36px;
+  height: auto;
+  margin: 0 12px 0 0;
+  padding: 0;
+  align-self: center;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &__box {
+    display: flex;
+
+    &_img {
+      height: 100%;
+    }
+  }
+}

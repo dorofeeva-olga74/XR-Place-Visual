@@ -1,14 +1,35 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './List.module.scss';
-import { motion, MotionValue, useScroll } from 'motion/react';
+import { motion, useInView } from 'motion/react';
+import { Sceleton } from '../../Ui/Sceleton/Sceleton';
 
-const ListItem = ({ text, progress }: { text: string; progress: MotionValue }) => {
+interface ListItemProps {
+  text: string;
+  index: number;
+}
+const ListItem: React.FC<ListItemProps> = ({ text, index }) => {
+  const ref = useRef<HTMLLIElement>(null);
+  const isInView = useInView(ref, { once: false });
+  const [isVisible, setIsVisible] = useState(false);
+  const startColor = '#A5A7A7';
+  const endColor = '#A5A7A7';
+
+  useEffect(() => {
+    if (isInView) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  }, [isInView]);
+
   return (
-    <li className={styles['list-item']}>
+    <motion.li className={styles.listItem} ref={ref}>
       <p>{text}</p>
-      <motion.div className={styles['progress-bar']} style={{ scaleX: progress }}></motion.div>
-    </li>
+      <motion.div key={index} className={styles.listItem__gradient} initial={{ opacity: 0, width: 0 }} animate={isVisible ? { opacity: 1, width: '100%' } : { opacity: 0, width: '0%' }} transition={{ delay: 0, duration: 1, ease: 'linear' }}>
+        <Sceleton width="100%" height="2px" radius="0" startColor={startColor} endColor={endColor}></Sceleton>
+      </motion.div>
+    </motion.li>
   );
 };
 
@@ -16,15 +37,12 @@ const List: React.FC = () => {
   const ref = useRef(null);
   const { t } = useTranslation();
   const data: string[] = t('components.widget.list.items', { returnObjects: true }) as unknown as string[];
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start 0.9', 'end 0.7'],
-  });
+
   return (
-    <ul ref={ref} className={styles['list']}>
-      {data.map((item, index) => {
-        return <ListItem key={`${item}-${index}`} text={item} progress={scrollYProgress} />;
-      })}
+    <ul ref={ref} className={styles.list}>
+      {data.map((item, index) => (
+        <ListItem key={index} text={item} index={index} />
+      ))}
     </ul>
   );
 };

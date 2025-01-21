@@ -1,6 +1,8 @@
 @use './../../styles/globals';
 
-.claim__container {
+.claim {
+  width: 100%;
+  position: relative;
   display: grid;
   grid-template: repeat(6, 1fr) / repeat(2, 1fr);
   grid-template-areas:
@@ -11,98 +13,125 @@
     'title button'
     'title annotation';
 
-  @media (width <= 768px) {
+  &__title {
+    grid-area: title;
+    hyphens: auto;
+    color: globals.$white-txt;
+
+    @include globals.text-h2;
+
+    @media (width <= 1024px) {
+      border-right: none;
+      padding-bottom: 40px;
+
+      @include globals.mobile-h2;
+    }
+  }
+
+  &__ray {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    @media (width <= 1024px) {
+      display: none;
+    }
+  }
+
+  &__inputs {
+    grid-area: inputs;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-bottom: 60px;
+    background-color: globals.$black-bg;
+    color: globals.$grey-border;
+
+    @media (width <= 1024px) {
+      padding-left: 0;
+      padding-bottom: 40px;
+      row-gap: 20px;
+    }
+  }
+
+  &__button {
+    grid-area: button;
+    padding-left: 20px;
+
+    &_response {
+      color: globals.$main-blue;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    @media (width <= 1024px) {
+      padding-left: 0;
+    }
+  }
+
+  &__annotation {
+    grid-area: annotation;
+    padding: 20px 0 20px 20px;
+    color: globals.$white-txt;
+
+    @include globals.text-text-xs;
+
+    &_policy {
+      color: globals.$main-blue;
+    }
+
+    @media (width <= 1024px) {
+      padding: 20px 0 0;
+    }
+  }
+
+  &__inputSet {
+    width: 100%;
+
+    &_input {
+      width: 100%;
+      border: none;
+      z-index: 2;
+      padding: 20px 0;
+      background-color: globals.$black-bg;
+      color: globals.$white-txt;
+      border-bottom: 1px solid globals.$grey-border;
+
+      &:hover {
+        border-bottom: 1px solid globals.$white-bg;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:focus:valid {
+        border-bottom-color: globals.$main-blue;
+      }
+
+      &:not(:focus):valid {
+        border-bottom-color: globals.$grey-border;
+      }
+
+      &::placeholder {
+        color: globals.$grey-border;
+      }
+
+      @include globals.text-text-m;
+
+      @media (width <= 1024px) {
+        @include globals.mobile-m;
+      }
+
+      @media (width <= 760px) {
+        padding: 11px 0;
+      }
+    }
+  }
+
+  @media (width <= 1024px) {
     display: flex;
     flex-direction: column;
   }
-}
-
-.claim__title {
-  grid-area: title;
-  hyphens: auto;
-  color: globals.$white-txt;
-  border-right: 1px solid globals.$grey-border;
-
-  @include globals.text-h2;
-
-  @media (width <= 768px) {
-    border-right: none;
-    padding-bottom: 40px;
-
-    @include globals.mobile-h2;
-  }
-}
-
-.claim__inputs {
-  grid-area: inputs;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-left: 20px;
-  padding-bottom: 60px;
-  background-color: globals.$black-bg;
-  color: globals.$grey-border;
-
-  @media (width <= 768px) {
-    padding-left: 0;
-    padding-bottom: 40px;
-    row-gap: 20px;
-  }
-}
-
-.claim__input {
-  background-color: globals.$black-bg;
-  color: globals.$white-txt;
-  border: none;
-  padding: 20px 0;
-  border-bottom: 1px solid globals.$grey-border;
-
-  @include globals.text-text-m;
-
-  @media (width <= 768px) {
-    @include globals.mobile-m;
-  }
-
-  @media (width <= 360px) {
-    padding: 11px 0;
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &::placeholder {
-    color: globals.$grey-border;
-  }
-}
-
-.claim__button {
-  grid-area: button;
-  padding-left: 20px;
-
-  @media (width <= 768px) {
-    padding-left: 0;
-  }
-}
-
-.claim__annotation {
-  grid-area: annotation;
-  padding: 20px 0 20px 20px;
-  color: globals.$white-txt;
-
-  @include globals.text-text-xs;
-
-  @media (width <= 768px) {
-    padding-left: 0;
-  }
-}
-
-.claim__policy {
-  color: globals.$main-blue;
-}
-
-.claim__response {
-  color: globals.$main-blue;
-  padding: 10px 0;
-  text-align: center;
 }

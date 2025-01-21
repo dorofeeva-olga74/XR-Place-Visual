@@ -1,0 +1,140 @@
+@use '../../../styles/globals';
+
+@keyframes border-shimmer {
+  0% {
+    border: 1px solid transparent;
+  }
+
+  20% {
+    border-left: 1px solid transparent;
+    border-top: 2px solid globals.$grey-border;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+  }
+
+  40% {
+    border-left: 1px solid transparent;
+    border-top: 1px solid globals.$grey-border;
+    border-right: 2px solid globals.$grey-border;
+    border-bottom: 1px solid transparent;
+  }
+
+  60% {
+    border-left: 1px solid transparent;
+    border-top: 1px solid globals.$grey-border;
+    border-right: 1px solid globals.$grey-border;
+    border-bottom: 2px solid globals.$grey-border;
+  }
+
+  70% {
+    border-left: 2px solid globals.$grey-border;
+    border-top: 1px solid globals.$grey-border;
+    border-right: 1px solid globals.$grey-border;
+    border-bottom: 1px solid globals.$grey-border;
+  }
+
+  85% {
+    border: 1px solid globals.$grey-border;
+  }
+
+  100% {
+    border: 1px solid globals.$grey-border;
+  }
+}
+
+.advantagesCard {
+  display: flex;
+  flex-direction: column;
+  max-width: calc(33.333% - 32px);
+  word-wrap: break-word;
+  justify-content: flex-start;
+  padding: 32px 40px 48px;
+  gap: 28px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  position: relative;
+  animation: border-shimmer 4s 1 forwards;
+
+  &:hover {
+    box-shadow: 8px 8px 60px 10px rgb(0 177 184 / 30%);
+  }
+
+  &__circleContainer {
+    position: relative;
+    width: 100%;
+    height: 80px;
+
+    &_circle {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 1px solid globals.$grey-border;
+    }
+
+    @for $i from 2 through 10 {
+      &_circle--#{$i} {
+        left: #{($i - 1) * 40}px;
+      }
+    }
+  }
+
+  &__descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+
+    &_title {
+      min-height: 4.5em;
+      padding: 18px 0 12px;
+      width: 100%;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      line-clamp: 3;
+      overflow-wrap: normal;
+
+      @include globals.text-subheader-m;
+
+      @media (width <= 1024px) {
+        font-size: 22px;
+        min-height: auto;
+      }
+    }
+
+    &_textSet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      padding-left: 5px;
+      margin-left: 5px;
+
+      &_text {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        max-width: 100%;
+
+        @include globals.text-text-m;
+
+        @media (width <= 1024px) {
+          @include globals.mobile-m;
+        }
+      }
+    }
+  }
+
+  @media (width <= 1024px) {
+    max-width: 100%;
+    padding: 20px 20px 28px;
+    gap: 18px;
+  }
+
+  @media (width <= 760px) {
+    animation: none;
+    border: 1px solid globals.$grey-border;
+    box-shadow: 8px 8px 60px 10px rgb(0 177 184 / 30%);
+  }
+}

@@ -1,21 +1,13 @@
 @use '../../../styles/globals';
 
-.shimmerTextSet {
+.shimmer {
   display: flex;
   position: relative;
   padding: 0;
-  margin: 0;
-  width: 100%;
   z-index: 5;
-  transform: translateX(-5%);
-  opacity: 0;
-  transition:
-    opacity 15s,
-    transform 9s;
 
-  .shimmerText {
-    padding: 76px 0 92px 12%;
-    height: auto;
+  &__text {
+    padding: 87px 0 92px 130px;
     background-size: 200% auto;
     color: globals.$white-txt;
     background-clip: text;
@@ -23,49 +15,22 @@
 
     @include globals.desktop-xl;
 
-    @media (width <= 768px) {
+    @media (width <= 1024px) {
       width: 100%;
       margin-left: 0;
-      padding: 39px 0 60px 12%;
+      padding: 33px 0 0 39px;
 
       @include globals.mobile-xl;
     }
 
-    @media (width <= 360px) {
+    @media (width <= 760px) {
       padding: 0;
     }
 
-    .shimmerSpan {
+    &_span {
       color: globals.$main-blue;
       background-size: 200% auto;
       background-clip: text;
-      animation: shimmer 5s ease-out infinite;
     }
-  }
-}
-
-.visible {
-  opacity: 1;
-  transform: translateX(0);
-  transition:
-    opacity 15s ease-out,
-    transform 13s ease-out;
-}
-
-.hidden {
-  opacity: 0;
-  transform: translateX(-10px);
-  transition:
-    opacity 5s ease-out,
-    transform 3s ease-out;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: 100%;
-  }
-
-  100% {
-    background-position: 0%;
   }
 }

@@ -5,24 +5,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
   gap: 100px;
   color: globals.$white-txt;
-
-  @media (width <= 768px) {
-    gap: 40px;
-  }
-
-  @media (width <= 460px) {
-    gap: 28px;
-    padding: 18px 0;
-  }
 
   &__title {
     align-self: start;
 
     @include globals.text-h2;
 
-    @media (width <= 768px) {
+    @media (width <= 1024px) {
       @include globals.mobile-h2;
     }
   }
@@ -30,94 +22,110 @@
   &__grid {
     list-style-type: none;
     display: grid;
+    width: 100%;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 
-    @media (width <= 768px) {
+    &_description {
+      place-self: center center;
+      display: flex;
+      flex-direction: column;
+      padding: 0 70px;
+      width: 100%;
+
+      &_count {
+        @include globals.text-big-comment;
+      }
+
+      &_text {
+        @include globals.text-text-m;
+      }
+
+      @media (width <= 1024px) {
+        padding: 0 29px;
+      }
+
+      @media (width <= 760px) {
+        padding: 0;
+      }
+    }
+
+    &_project {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+
+      &_title {
+        @include globals.text-subheader-s;
+      }
+
+      &_video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+
+        @media (width <= 1024px) {
+          aspect-ratio: 16 / 9;
+        }
+      }
+    }
+
+    &_add {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &_button {
+        border: none;
+        background-color: globals.$black-bg;
+        cursor: pointer;
+
+        &_image {
+          width: 120px;
+          height: 120px;
+        }
+
+        &_more {
+          color: globals.$white-txt;
+          text-decoration: underline globals.$light-grey-border;
+
+          @include globals.mobile-m;
+
+          &:hover {
+            color: globals.$main-blue;
+            text-decoration: underline globals.$main-blue;
+          }
+        }
+
+        @media (width <= 760px) {
+          width: 100%;
+          display: flex;
+          justify-content: end;
+        }
+      }
+    }
+
+    @media (width <= 1024px) {
       grid-template-rows: repeat(3, 1fr);
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (width <= 460px) {
+    @media (width <= 760px) {
       grid-template-rows: 177px 1fr 1fr 1fr 23px;
       grid-template-columns: 1fr;
     }
   }
 
-  &__description {
-    place-self: center center;
-    display: flex;
-    flex-direction: column;
-    padding: 0 70px;
-
-    @media (width <= 768px) {
-      padding: 0 29px;
-    }
-
-    &_count {
-      @include globals.text-big-comment;
-    }
-
-    &_text {
-      @include globals.text-text-m;
-    }
+  @media (width <= 1024px) {
+    gap: 40px;
   }
 
-  &__project {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-
-    &_title {
-      @include globals.text-subheader-s;
-    }
-  }
-
-  &__video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    &_container {
-      max-width: 441px;
-      height: 434px;
-
-      @media (width <= 768px) {
-        max-width: 340px;
-        height: 280px;
-      }
-    }
-  }
-
-  &__arrow {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    &_button {
-      border: none;
-      background-color: globals.$black-bg;
-      cursor: pointer;
-
-      @media (width <= 460px) {
-        width: 100%;
-        display: flex;
-        justify-content: end;
-      }
-    }
-
-    &_image {
-      width: 120px;
-      height: 120px;
-    }
-  }
-
-  &__loadmore {
-    color: globals.$white-txt;
-    border-bottom: 1px solid globals.$white-txt;
-
-    @include globals.mobile-m;
+  @media (width <= 760px) {
+    gap: 28px;
+    padding: 18px 0;
   }
 }

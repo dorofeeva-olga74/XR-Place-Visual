@@ -1,16 +1,17 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './FeaturesWidgetSection.module.scss';
+import WidgetImage from '../../../vendor/images/WidgetImage.png';
 import List from '../List/List';
 
 const FeaturesWidgetSection: React.FC = () => {
   const { t } = useTranslation();
   return (
-    <div className={styles['features-widget-set']}>
-      <h2 className={styles['features-widget-title']}>{t('components.widget.featuresWidgetSection.title')}</h2>
-      <div className={styles['features-widget-fragment']}>
-        <div className={styles['features-widget-iframe-container']}>
-          <iframe className={styles['features-widget-iframe']} src="https://xrplace.io/video/apartment_1.mp4" title={t('components.widget.featuresWidgetSection.imageAlt')}></iframe>
+    <div className={styles.featuresWidget}>
+      <h2 className={styles.featuresWidget__title}>{t('components.widget.featuresWidgetSection.title')}</h2>
+      <div className={styles.featuresWidget__fragment}>
+        <div className={styles.featuresWidget__fragment_container}>
+          <img className={styles.featuresWidget__fragment_img} src={WidgetImage} alt={t('components.widget.featuresWidgetSection.imageAlt')} />
         </div>
         <List />
       </div>

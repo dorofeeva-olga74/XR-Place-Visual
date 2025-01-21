@@ -3,32 +3,30 @@
 .widget {
   display: flex;
   flex-direction: column;
-  gap: 160px;
+  gap: 122px;
   position: relative;
 
-  .grid-background {
+  &__gridBackground {
     position: absolute;
     margin: 0;
-    width: calc(100% - 40px);
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 42px 320px 38px;
     grid-auto-rows: 1fr;
     z-index: 2;
 
-    @media (width <= 768px) {
-      width: calc(100% - 34px);
-    }
-
-    @media (width <= 320px) {
-      display: none;
-    }
-
-    @media (width <= 768px) {
+    @media (width <= 1024px) {
+      margin: 0 -18px;
+      width: calc(100% + 36px);
       grid-template-columns: 34px 1fr 1fr 34px;
     }
 
-    .grid-item {
+    @media (width <= 760px) {
+      display: none;
+    }
+
+    &_item {
       border-right: 2px solid globals.$dark-grey-border;
       border-bottom: 2px solid globals.$dark-grey-border;
       width: 100%;
@@ -49,78 +47,51 @@
     }
   }
 
-  @media (width <= 768px) {
-    gap: 80px;
+  @media (width <= 1024px) {
+    gap: 90px;
   }
 
-  .widget-text-container {
+  &__textContainer {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
+    position: relative;
     z-index: 2;
     margin: 42px 0 0 25%;
     padding: 0;
 
-    .widget-circle-container {
-      position: relative;
-      display: flex;
-      align-items: start;
-      height: 15px;
-      width: 300px;
-      z-index: 7;
-      margin: -8px -15px;
+    &_circleContainer {
+      position: absolute;
+      z-index: 4;
+      margin: -9px;
 
-      @media (width <= 768px) {
-        width: 22px;
-        margin-left: 14.12px;
+      @media (width <= 760px) {
+        display: none;
       }
+    }
 
-      @media (width <= 360px) {
+    &_rayContainer {
+      position: absolute;
+      z-index: 2;
+      margin: -3px;
+      filter: blur(1px);
+
+      @media (width <= 760px) {
         display: none;
       }
     }
 
     @media (width <= 1024px) {
-      margin: 42px 0 0;
+      margin: 43px 0 0 17px;
+    }
+
+    @media (width <= 760px) {
+      margin: 0;
     }
   }
 
-  .widget-container {
+  &__container {
     display: flex;
     width: 100%;
     flex-direction: column;
   }
-
-  &_circle {
-    position: absolute;
-    background-color: globals.$black-bg;
-    left: -20px;
-    top: -20px;
-    width: 50px;
-    height: 50px;
-    background-image: url('./../../vendor/images/circle.png');
-    background-size: cover;
-
-    @media (width <= 360px) {
-      left: -10px;
-      top: -4px;
-      width: 40px;
-      height: 40px;
-    }
-  }
-}
-
-.progress-ray-x {
-  position: absolute;
-  top: -42px;
-  left: -10px;
-  height: 100px;
-  transform-origin: 0%;
-}
-
-.progress-bar-y {
-  position: absolute;
-  top: -10px;
-  left: -45px;
-  width: 100px;
-  transform-origin: top center;
 }

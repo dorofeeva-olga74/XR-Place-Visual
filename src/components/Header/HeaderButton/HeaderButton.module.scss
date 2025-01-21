@@ -1,17 +1,19 @@
 @use '../../../styles/globals';
 
-.lang-section {
+.headerButton {
   display: flex;
   justify-content: space-between;
   text-align: center;
   gap: 12px;
 
-  @media (width < 1440px) {
-    margin-right: 7px;
-    margin-top: 3px;
+  &__separator {
+    width: 0.5px;
+    height: auto;
+    margin: 5px 0;
+    background-color: globals.$light-grey-border;
   }
 
-  .lang-section-link {
+  &__lang {
     color: globals.$white-txt;
     padding: 4px 0;
     text-decoration: none;
@@ -20,11 +22,15 @@
     cursor: pointer;
 
     @include globals.text-text-m;
+
+    &_active {
+      border-bottom: 1px solid globals.$white-bg;
+      color: globals.$main-blue;
+    }
   }
 
-  .menu-button {
-    margin-top: 3px;
-    margin-left: 8px;
+  &__menu {
+    margin: 6px 6px 6px 10px;
     background-image: url('../../../vendor/images/MenuImg.svg');
     background-repeat: no-repeat;
     background-position: center;

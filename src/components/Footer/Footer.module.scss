@@ -4,32 +4,32 @@
   display: grid;
   grid-template-rows: auto auto auto auto;
   grid-template-areas:
+    'gradient gradient gradient gradient'
     'logoText logoText descriptionText descriptionText'
     'logoTitle logoTitle socialBox socialBox'
     'address address address address';
   grid-auto-columns: minmax(auto, 1fr);
-  padding: 40px 0;
+  margin-bottom: 20px;
+  width: 100%;
   color: globals.$white-txt;
-  position: relative;
-  border-top: 2px solid transparent;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, #080808 -2.44%, #878787 50%, #080808 102.44%);
-    pointer-events: none;
+  &__gradient {
+    grid-area: gradient;
+    padding-bottom: 40px;
+
+    @media (width <= 760px) {
+      padding-bottom: 20px;
+    }
   }
 
-  &__logoImg {
+  &__logoContainer {
     display: none;
     grid-area: logoImg;
 
-    @media (width <= 600px) {
-      display: block;
+    @media (width <= 760px) {
+      display: flex;
+      align-items: center;
+      margin: 0;
     }
   }
 
@@ -43,18 +43,19 @@
   }
 
   &__logoTitle {
-    margin: 0;
-    padding: 20px 0 0;
+    margin: 20px 0 0;
+    padding: 0;
     grid-area: logoTitle;
+    white-space: nowrap;
 
     @include globals.desktop-h1;
 
-    @media (width <= 768px) {
+    @media (width <= 1024px) {
       font-size: 64px;
     }
 
-    @media (width <= 600px) {
-      padding: 0;
+    @media (width <= 760px) {
+      margin: 0;
 
       @include globals.mobile-h1;
     }
@@ -68,11 +69,11 @@
     line-height: 1;
     grid-area: descriptionText;
 
-    @media (width <= 768px) {
+    @media (width <= 1024px) {
       @include globals.text-text-m;
     }
 
-    @media (width <= 600px) {
+    @media (width <= 760px) {
       text-align: start;
       padding-left: 0;
 
@@ -90,7 +91,7 @@
     gap: 20px;
     grid-area: socialBox;
 
-    @media (width <= 600px) {
+    @media (width <= 760px) {
       justify-content: flex-start;
     }
   }
@@ -102,32 +103,35 @@
     align-items: center;
     gap: 16px;
     grid-area: address;
+    padding-top: 40px;
 
-    @media (width <= 790px) {
-      flex-wrap: wrap;
-      justify-content: space-evenly;
+    &_address {
+      @include globals.text-text-xs;
+
+      @media (width <= 760px) {
+        color: globals.$grey-border;
+
+        @include globals.mobile-m;
+      }
     }
 
-    @media (width <= 600px) {
+    @media (width <= 1024px) {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding-top: 28px;
+    }
+
+    @media (width <= 760px) {
+      padding-top: 0;
       flex-direction: column;
       align-items: flex-start;
     }
   }
 
-  &__address {
-    @include globals.text-text-xs;
-
-    @media (width <= 600px) {
-      color: globals.$grey-border;
-
-      @include globals.mobile-m;
-    }
-  }
-
-  @media (width <= 1160px) {
-    padding: 40px 0 20px;
+  @media (width <= 1024px) {
     grid-template-rows: auto auto auto;
     grid-template-areas:
+      'gradient gradient gradient gradient'
       'logoText descriptionText descriptionText descriptionText'
       'logoTitle logoTitle logoTitle logoTitle'
       'socialBox socialBox socialBox socialBox'
@@ -136,14 +140,15 @@
     grid-auto-columns: minmax(auto, 1fr);
   }
 
-  @media (width <= 600px) {
+  @media (width <= 760px) {
     grid-template-areas:
+      'gradient gradient'
       'logoImg logoTitle'
       'descriptionText descriptionText'
       'logoText logoText'
       'socialBox socialBox'
       'address address';
-    grid-auto-columns: 20% 80%;
+    grid-auto-columns: auto 1fr;
     gap: 20px 0;
   }
 }
