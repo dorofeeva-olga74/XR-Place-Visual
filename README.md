@@ -19,7 +19,7 @@
 Перейди в папку проекта
 
 ```bash
-  cd XR-Place-team-2
+  cd XR-Place-Visual
 ```
 
 Установи зависимости
