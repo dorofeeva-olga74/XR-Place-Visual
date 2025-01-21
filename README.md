@@ -11,7 +11,7 @@
 
 ## Инструкция по сборке и запуску:
 
-Склонируйте проект
+Склонируй проект
 
 ```bash
   git clone https://github.com/dorofeeva-olga74/XR-Place-Visual
